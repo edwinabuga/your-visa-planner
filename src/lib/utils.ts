@@ -7,6 +7,11 @@ export function getWhatsAppUrl(message?: string): string {
   return base;
 }
 
-export function getFilloutFormUrl(): string {
-  return process.env.NEXT_PUBLIC_FILLOUT_FORM_URL || "";
+export function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
