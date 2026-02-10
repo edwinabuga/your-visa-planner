@@ -28,7 +28,8 @@ const emptyFormData: EligibilityFormData = {
   purposeOfVisit: "",
   purposeOther: "",
   travelDate: "",
-  stayDuration: "",
+  stayDurationAmount: "",
+  stayDurationUnit: "Weeks",
   employmentStatus: "",
   jobDuration: "",
   businessDuration: "",
@@ -82,7 +83,7 @@ export default function EligibilityForm() {
         return (
           !!data.purposeOfVisit &&
           !!data.travelDate &&
-          !!data.stayDuration.trim()
+          !!data.stayDurationAmount.trim()
         );
       case 3:
         return !!data.employmentStatus;
@@ -289,18 +290,36 @@ export default function EligibilityForm() {
                 />
               </div>
               <div>
-                <label htmlFor="stayDuration" className={labelClass}>
+                <label htmlFor="stayDurationAmount" className={labelClass}>
                   How long will you stay in the UK? *
                 </label>
-                <input
-                  type="text"
-                  id="stayDuration"
-                  required
-                  className={inputClass}
-                  placeholder="e.g. 2 weeks, 1 month"
-                  value={data.stayDuration}
-                  onChange={(e) => update({ stayDuration: e.target.value })}
-                />
+                <div className="flex gap-3">
+                  <input
+                    type="number"
+                    id="stayDurationAmount"
+                    required
+                    min="1"
+                    inputMode="numeric"
+                    className={`${inputClass} flex-1`}
+                    placeholder="e.g. 2"
+                    value={data.stayDurationAmount}
+                    onChange={(e) =>
+                      update({ stayDurationAmount: e.target.value })
+                    }
+                  />
+                  <select
+                    id="stayDurationUnit"
+                    className={`${inputClass} w-32 bg-white`}
+                    value={data.stayDurationUnit}
+                    onChange={(e) =>
+                      update({ stayDurationUnit: e.target.value })
+                    }
+                  >
+                    <option value="Days">Days</option>
+                    <option value="Weeks">Weeks</option>
+                    <option value="Months">Months</option>
+                  </select>
+                </div>
               </div>
             </div>
           </StepWrapper>

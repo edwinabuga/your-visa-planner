@@ -115,7 +115,7 @@ function buildEmailHtml(data: EligibilityFormData): string {
       <table style="width: 100%; border-collapse: collapse;">
         ${row("Purpose of Visit", purpose)}
         ${row("Planned Travel Date", s(data.travelDate), true)}
-        ${row("Duration of Stay", s(data.stayDuration))}
+        ${row("Duration of Stay", `${s(data.stayDurationAmount)} ${s(data.stayDurationUnit)}`)}
       </table>
 
       <h3 style="color: #0f6b6e; margin-top: 20px;">Employment &amp; Income</h3>

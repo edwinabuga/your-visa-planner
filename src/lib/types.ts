@@ -7,7 +7,8 @@ export interface EligibilityFormData {
   purposeOfVisit: string;
   purposeOther: string;
   travelDate: string;
-  stayDuration: string;
+  stayDurationAmount: string;
+  stayDurationUnit: string;
 
   // Step 3: Employment & Income
   employmentStatus: string;
