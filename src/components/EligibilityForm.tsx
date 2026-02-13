@@ -295,17 +295,18 @@ export default function EligibilityForm() {
                 </label>
                 <div className="flex gap-3">
                   <input
-                    type="number"
+                    type="text"
                     id="stayDurationAmount"
                     required
-                    min="1"
                     inputMode="numeric"
-                    className={`${inputClass} flex-1`}
+                    pattern="[0-9]*"
+                    className={`${inputClass} flex-1 min-w-0`}
                     placeholder="e.g. 2"
                     value={data.stayDurationAmount}
-                    onChange={(e) =>
-                      update({ stayDurationAmount: e.target.value })
-                    }
+                    onChange={(e) => {
+                      const val = e.target.value.replace(/[^0-9]/g, "");
+                      update({ stayDurationAmount: val });
+                    }}
                   />
                   <select
                     id="stayDurationUnit"
