@@ -12,6 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://yourvisaplanner.com"),
   title: {
     default: "Your Visa Planner | UK Visa Consultancy in Nairobi, Kenya",
     template: "%s | Your Visa Planner",
@@ -32,6 +33,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     siteName: "Your Visa Planner",
+    title: "Your Visa Planner | UK Visa Consultancy in Nairobi, Kenya",
+    description:
+      "Professional UK visa consultancy based in Nairobi, Kenya. Expert guidance for Visitor, Skilled Worker, Student, Spouse, and other UK visas.",
+  },
+  twitter: {
+    card: "summary_large_image",
   },
 };
 
