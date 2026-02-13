@@ -3,7 +3,7 @@ import { CheckCircle } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-br from-primary-light via-white to-white py-16 sm:py-24 px-4">
+    <section className="bg-gradient-to-br from-primary-light via-white to-white dark:via-[#121212] dark:to-[#121212] py-16 sm:py-24 px-4">
       <div className="mx-auto max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>

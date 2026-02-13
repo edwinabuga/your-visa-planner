@@ -18,7 +18,7 @@ const company = [
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-neutral-300">
+    <footer className="bg-neutral-900 dark:bg-[#0a0a0a] text-neutral-300 dark:text-[#a3a3a3]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-neutral-800 text-center text-sm">
+        <div className="mt-10 pt-8 border-t border-neutral-800 dark:border-[#262626] text-center text-sm">
           <p>&copy; {new Date().getFullYear()} Your Visa Planner. All rights reserved.</p>
         </div>
       </div>

@@ -17,7 +17,7 @@ export default function ServiceCard({
   return (
     <Link
       href={href}
-      className="group block rounded-xl border border-neutral-200 bg-white p-6 hover:shadow-lg hover:border-primary/30 transition-all"
+      className="group block rounded-xl border border-neutral-200 bg-white dark:bg-neutral-950 p-6 hover:shadow-lg hover:border-primary/30 transition-all"
     >
       <div className="mb-4 inline-flex rounded-lg bg-primary-light p-3">
         <Icon size={24} className="text-primary" />
