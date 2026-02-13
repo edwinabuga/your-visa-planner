@@ -69,12 +69,14 @@ export async function POST(
       message: "Your eligibility assessment has been submitted successfully.",
     });
   } catch (error) {
-    console.error("Eligibility form error:", error);
+    const errorDetail = error instanceof Error ? error.message : String(error);
+    console.error("Eligibility form error:", errorDetail);
     return NextResponse.json(
       {
         success: false,
         message:
           "Something went wrong. Please try again or contact us via WhatsApp.",
+        debug: errorDetail,
       },
       { status: 500 }
     );
