@@ -293,14 +293,14 @@ export default function EligibilityForm() {
                 <label htmlFor="stayDurationAmount" className={labelClass}>
                   How long will you stay in the UK? *
                 </label>
-                <div className="flex gap-3">
+                <div className="grid grid-cols-[1fr_auto] gap-3">
                   <input
                     type="text"
                     id="stayDurationAmount"
                     required
                     inputMode="numeric"
                     pattern="[0-9]*"
-                    className={`${inputClass} flex-1 min-w-0`}
+                    className="rounded-lg border border-neutral-300 px-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full"
                     placeholder="e.g. 2"
                     value={data.stayDurationAmount}
                     onChange={(e) => {
@@ -310,7 +310,7 @@ export default function EligibilityForm() {
                   />
                   <select
                     id="stayDurationUnit"
-                    className={`${inputClass} w-32 bg-white`}
+                    className="rounded-lg border border-neutral-300 px-4 py-2.5 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none w-32 bg-white"
                     value={data.stayDurationUnit}
                     onChange={(e) =>
                       update({ stayDurationUnit: e.target.value })
