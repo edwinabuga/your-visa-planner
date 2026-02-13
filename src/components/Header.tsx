@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -22,9 +23,14 @@ export default function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-primary">
-              Your Visa Planner
-            </span>
+            <Image
+              src="/images/logo.png"
+              alt="Your Visa Planner"
+              width={140}
+              height={140}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop navigation */}

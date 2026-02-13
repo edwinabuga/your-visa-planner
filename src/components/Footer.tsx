@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const services = [
@@ -23,9 +24,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">
-              Your Visa Planner
-            </h3>
+            <Image
+              src="/images/logo.png"
+              alt="Your Visa Planner"
+              width={140}
+              height={140}
+              className="h-10 w-auto mb-4"
+            />
             <p className="text-sm leading-relaxed">
               Professional UK visa consultancy based in Nairobi, Kenya. We help
               you navigate the UK visa process with confidence.

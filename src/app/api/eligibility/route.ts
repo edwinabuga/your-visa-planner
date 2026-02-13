@@ -43,11 +43,26 @@ export async function POST(
     const fullName = `${data.firstName} ${data.secondName}`;
 
     await resend.emails.send({
-      from: "Your Visa Planner <onboarding@resend.dev>",
+      from: "Your Visa Planner <edwin@yourvisaplanner.com>",
       to: process.env.RECIPIENT_EMAIL!,
       subject: `New Eligibility Assessment — ${fullName}`,
       html: buildEmailHtml(data),
     });
+
+    // Confirmation email to submitter (best-effort — don't fail if this errors)
+    if (data.email && data.email.trim()) {
+      try {
+        await resend.emails.send({
+          from: "Your Visa Planner <edwin@yourvisaplanner.com>",
+          to: data.email.trim(),
+          subject:
+            "We've received your eligibility assessment — Your Visa Planner",
+          html: buildConfirmationHtml(data),
+        });
+      } catch (confirmError) {
+        console.error("Confirmation email failed:", confirmError);
+      }
+    }
 
     return NextResponse.json({
       success: true,
@@ -145,6 +160,54 @@ function buildEmailHtml(data: EligibilityFormData): string {
 
       <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 24px 0;" />
       <p style="color: #737373; font-size: 12px;">This submission was sent from the eligibility form on yourvisaplanner.com</p>
+    </div>
+  `;
+}
+
+function buildConfirmationHtml(data: EligibilityFormData): string {
+  const s = escapeHtml;
+  const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
+  const whatsappUrl = whatsappNumber ? `https://wa.me/${whatsappNumber}` : "";
+
+  return `
+    <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+      <div style="background: #0f6b6e; padding: 24px 32px; border-radius: 8px 8px 0 0;">
+        <h1 style="color: #ffffff; margin: 0; font-size: 20px;">Your Visa Planner</h1>
+      </div>
+
+      <div style="padding: 32px; border: 1px solid #e5e5e5; border-top: none; border-radius: 0 0 8px 8px;">
+        <h2 style="color: #0f6b6e; margin-top: 0;">We've received your assessment, ${s(data.firstName)}!</h2>
+
+        <p style="line-height: 1.6;">
+          Thank you for completing the eligibility assessment on our website. We have received your details and Edwin will personally review your submission.
+        </p>
+
+        <div style="background: #f0fafa; border-left: 4px solid #0f6b6e; padding: 16px 20px; margin: 24px 0; border-radius: 0 4px 4px 0;">
+          <h3 style="color: #0f6b6e; margin: 0 0 8px 0; font-size: 15px;">What happens next?</h3>
+          <ol style="margin: 0; padding-left: 20px; line-height: 1.8;">
+            <li>Edwin will review your eligibility details</li>
+            <li>You will receive a response within <strong>24 hours</strong></li>
+            <li>We will discuss your options and recommended next steps</li>
+          </ol>
+        </div>
+
+        ${whatsappUrl ? `
+        <p style="line-height: 1.6;">
+          Want a faster response? You can reach Edwin directly on WhatsApp:
+        </p>
+        <div style="text-align: center; margin: 24px 0;">
+          <a href="${whatsappUrl}" style="display: inline-block; background: #25D366; color: #ffffff; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px;">
+            Continue on WhatsApp
+          </a>
+        </div>
+        ` : ""}
+
+        <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 24px 0;" />
+
+        <p style="color: #737373; font-size: 13px; line-height: 1.5; margin-bottom: 0;">
+          This is an automated confirmation from Your Visa Planner. If you have urgent questions, contact us via WhatsApp${whatsappUrl ? ` at <a href="${whatsappUrl}" style="color: #0f6b6e;">${whatsappUrl}</a>` : ""}.
+        </p>
+      </div>
     </div>
   `;
 }
