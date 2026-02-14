@@ -12,10 +12,15 @@ export default function AboutPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-primary-light py-16 px-4">
-        <div className="mx-auto max-w-7xl">
-          <h1 className="text-4xl font-bold text-neutral-900">About Us</h1>
-          <p className="mt-4 text-lg text-neutral-600 max-w-2xl">
+      <section className="py-20 px-4 bg-neutral-50">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm tracking-widest uppercase text-accent font-medium mb-4">
+            About Us
+          </p>
+          <h1 className="font-heading text-4xl sm:text-5xl font-semibold text-primary">
+            Your Case Deserves Personal Attention
+          </h1>
+          <p className="mt-6 text-lg text-neutral-500 max-w-2xl mx-auto leading-relaxed">
             Your Visa Planner was founded to make UK visa applications less
             stressful and more successful for Kenyans and East Africans.
           </p>
@@ -23,32 +28,34 @@ export default function AboutPage() {
       </section>
 
       {/* Founder section */}
-      <section className="py-16 px-4">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-20 px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               {/* Placeholder for professional photo */}
-              <div className="aspect-[4/5] rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+              <div className="aspect-[4/5] rounded-xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
                 <div className="text-center text-white p-8">
-                  <div className="w-32 h-32 rounded-full bg-white/20 mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-4xl font-bold">EA</span>
+                  <div className="w-32 h-32 rounded-full bg-white/10 mx-auto mb-4 flex items-center justify-center border border-white/20">
+                    <span className="font-heading text-4xl font-semibold">EA</span>
                   </div>
-                  <p className="text-sm text-primary-light">
+                  <p className="text-sm text-neutral-300">
                     Professional photo coming soon
                   </p>
                 </div>
               </div>
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-neutral-900 mb-6">
+              <p className="text-sm tracking-widest uppercase text-accent font-medium mb-4">
+                Founder & Lead Consultant
+              </p>
+              <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-primary mb-8">
                 Meet Edwin Abuga
               </h2>
-              <div className="space-y-4 text-neutral-600 leading-relaxed">
+              <div className="space-y-5 text-neutral-500 leading-relaxed">
                 <p>
-                  Edwin Abuga is the founder and lead consultant at Your Visa
-                  Planner. With years of experience in UK immigration
-                  consultancy, Edwin has helped hundreds of clients across Kenya
-                  and East Africa successfully navigate the UK visa process.
+                  With years of experience in UK immigration consultancy, Edwin
+                  has helped hundreds of clients across Kenya and East Africa
+                  successfully navigate the UK visa process.
                 </p>
                 <p>
                   Having seen first-hand how stressful and confusing the visa
@@ -57,11 +64,10 @@ export default function AboutPage() {
                   affordable visa consultancy that truly puts clients first.
                 </p>
                 <p>
-                  Edwin&apos;s approach is personal. Every client receives
-                  individual attention, a tailored strategy, and clear
-                  communication throughout the process. He believes that with the
-                  right guidance, anyone with a genuine case can put forward a
-                  strong application.
+                  Every client receives individual attention, a tailored
+                  strategy, and clear communication throughout the process. He
+                  believes that with the right guidance, anyone with a genuine
+                  case can put forward a strong application.
                 </p>
               </div>
             </div>
@@ -70,12 +76,17 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 px-4 bg-neutral-50">
-        <div className="mx-auto max-w-7xl">
-          <h2 className="text-3xl font-bold text-neutral-900 text-center mb-12">
-            Why Clients Trust Us
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-20 px-4 bg-white">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-14">
+            <p className="text-sm tracking-widest uppercase text-accent font-medium mb-3">
+              Why Clients Trust Us
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-primary">
+              Our Values
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {[
               {
                 icon: Award,
@@ -102,14 +113,12 @@ export default function AboutPage() {
                   "We give you a realistic assessment upfront. If there are challenges, we tell you honestly.",
               },
             ].map((value) => (
-              <div key={value.title} className="text-center">
-                <div className="mx-auto mb-4 inline-flex rounded-full bg-primary-light p-4">
-                  <value.icon size={28} className="text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+              <div key={value.title}>
+                <value.icon size={28} className="text-accent mb-4" strokeWidth={1.5} />
+                <h3 className="text-lg font-semibold text-primary mb-2">
                   {value.title}
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm text-neutral-500 leading-relaxed">
                   {value.description}
                 </p>
               </div>
@@ -119,12 +128,15 @@ export default function AboutPage() {
       </section>
 
       {/* Approach */}
-      <section className="py-16 px-4">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-6">
+      <section className="py-20 px-4">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm tracking-widest uppercase text-accent font-medium mb-3">
+            How We Work
+          </p>
+          <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-primary mb-8">
             Our Approach
           </h2>
-          <div className="space-y-4 text-neutral-600 leading-relaxed">
+          <div className="space-y-5 text-neutral-500 leading-relaxed text-lg">
             <p>
               At Your Visa Planner, we believe that a successful visa
               application starts with understanding your unique situation. We

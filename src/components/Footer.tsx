@@ -11,7 +11,7 @@ const services = [
 ];
 
 const company = [
-  { name: "About Us", href: "/about" },
+  { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
   { name: "Privacy Policy", href: "/privacy" },
@@ -19,9 +19,9 @@ const company = [
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 dark:bg-[#0a0a0a] text-neutral-300 dark:text-[#a3a3a3]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-primary text-neutral-400">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
             <Image
@@ -29,7 +29,7 @@ export default function Footer() {
               alt="Your Visa Planner"
               width={140}
               height={140}
-              className="h-10 w-auto mb-4"
+              className="h-10 w-auto mb-5 brightness-200"
             />
             <p className="text-sm leading-relaxed">
               Professional UK visa consultancy based in Nairobi, Kenya. We help
@@ -39,15 +39,15 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-semibold text-neutral-200 uppercase tracking-widest mb-5">
               Services
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {services.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm hover:text-white transition-colors"
+                    className="text-sm hover:text-accent transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -58,15 +58,15 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-semibold text-neutral-200 uppercase tracking-widest mb-5">
               Company
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-sm hover:text-white transition-colors"
+                    className="text-sm hover:text-accent transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -77,23 +77,23 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            <h4 className="text-xs font-semibold text-neutral-200 uppercase tracking-widest mb-5">
               Contact
             </h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-2 text-sm">
-                <MapPin size={16} className="mt-0.5 shrink-0" />
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-sm">
+                <MapPin size={16} className="mt-0.5 shrink-0 text-accent" />
                 <span>Nairobi, Kenya</span>
               </li>
-              <li className="flex items-center gap-2 text-sm">
-                <Phone size={16} className="shrink-0" />
-                <a href="tel:+254796544253" className="hover:text-white transition-colors">
+              <li className="flex items-center gap-3 text-sm">
+                <Phone size={16} className="shrink-0 text-accent" />
+                <a href="tel:+254796544253" className="hover:text-accent transition-colors">
                   +254 796 544 253
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-sm">
-                <Mail size={16} className="shrink-0" />
-                <a href="mailto:edwin@yourvisaplanner.com" className="hover:text-white transition-colors">
+              <li className="flex items-center gap-3 text-sm">
+                <Mail size={16} className="shrink-0 text-accent" />
+                <a href="mailto:edwin@yourvisaplanner.com" className="hover:text-accent transition-colors">
                   edwin@yourvisaplanner.com
                 </a>
               </li>
@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-neutral-800 dark:border-[#262626] text-center text-sm">
+        <div className="mt-14 pt-8 border-t border-white/10 text-center text-sm text-neutral-500">
           <p>&copy; {new Date().getFullYear()} Your Visa Planner. All rights reserved.</p>
         </div>
       </div>

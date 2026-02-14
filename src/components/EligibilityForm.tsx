@@ -14,13 +14,13 @@ import type { EligibilityFormData, FormApiResponse } from "@/lib/types";
 const TOTAL_STEPS = 7;
 
 const inputClass =
-  "w-full rounded-lg border border-neutral-300 bg-white dark:bg-neutral-950 px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none";
+  "w-full rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none";
 const labelClass = "block text-sm font-medium text-neutral-700 mb-1";
 const radioGroupClass = "flex flex-col gap-2.5 mt-1.5";
 const radioLabelClass =
-  "flex items-center gap-2.5 text-sm text-neutral-700 cursor-pointer rounded-lg border border-neutral-200 bg-white dark:bg-neutral-950 px-4 py-3 hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-primary-light transition-colors";
+  "flex items-center gap-2.5 text-sm text-neutral-700 cursor-pointer rounded-lg border border-neutral-200 bg-white px-4 py-3 hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-primary-light transition-colors";
 const checkboxLabelClass =
-  "flex items-center gap-2.5 text-sm text-neutral-700 cursor-pointer rounded-lg border border-neutral-200 bg-white dark:bg-neutral-950 px-4 py-3 hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-primary-light transition-colors";
+  "flex items-center gap-2.5 text-sm text-neutral-700 cursor-pointer rounded-lg border border-neutral-200 bg-white px-4 py-3 hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-primary-light transition-colors";
 
 const emptyFormData: EligibilityFormData = {
   firstName: "",
@@ -197,8 +197,8 @@ export default function EligibilityForm() {
 
       {/* Error banner */}
       {status === "error" && (
-        <div className="rounded-lg bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 p-4 mb-6">
-          <p className="text-sm text-red-700 dark:text-red-400">{errorMessage}</p>
+        <div className="rounded-lg bg-red-50 border border-red-200 p-4 mb-6">
+          <p className="text-sm text-red-700">{errorMessage}</p>
         </div>
       )}
 
@@ -300,7 +300,7 @@ export default function EligibilityForm() {
                     required
                     inputMode="numeric"
                     pattern="[0-9]*"
-                    className="rounded-lg border border-neutral-300 bg-white dark:bg-neutral-950 px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full"
+                    className="rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full"
                     placeholder="e.g. 2"
                     value={data.stayDurationAmount}
                     onChange={(e) => {
@@ -310,7 +310,7 @@ export default function EligibilityForm() {
                   />
                   <select
                     id="stayDurationUnit"
-                    className="rounded-lg border border-neutral-300 px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none w-32 bg-white dark:bg-neutral-950"
+                    className="rounded-lg border border-neutral-300 px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none w-32 bg-white"
                     value={data.stayDurationUnit}
                     onChange={(e) =>
                       update({ stayDurationUnit: e.target.value })

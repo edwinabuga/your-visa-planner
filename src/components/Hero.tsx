@@ -1,69 +1,33 @@
 import Link from "next/link";
-import { CheckCircle } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bg-gradient-to-br from-primary-light via-white to-white dark:via-[#121212] dark:to-[#121212] py-16 sm:py-24 px-4">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 leading-tight">
-              Your Trusted Partner for{" "}
-              <span className="text-primary">UK Visa</span> Applications
-            </h1>
-            <p className="mt-6 text-lg text-neutral-600 leading-relaxed">
-              Based in Nairobi, we provide expert guidance to help Kenyans and
-              East Africans successfully apply for UK visas. From visitor visas
-              to skilled worker permits, we make the process simple and
-              stress-free.
-            </p>
-            <ul className="mt-6 space-y-3">
-              {[
-                "Expert guidance through every step",
-                "Personalised document preparation",
-                "High success rate applications",
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2 text-neutral-700">
-                  <CheckCircle size={20} className="text-primary shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/eligibility"
-                className="rounded-lg bg-accent px-8 py-3.5 text-center text-base font-semibold text-white hover:bg-accent-dark transition-colors"
-              >
-                Check Your Eligibility
-              </Link>
-              <Link
-                href="/services"
-                className="rounded-lg border-2 border-primary px-8 py-3.5 text-center text-base font-semibold text-primary hover:bg-primary hover:text-white transition-colors"
-              >
-                Our Services
-              </Link>
-            </div>
-          </div>
-          <div className="hidden lg:block">
-            <div className="rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-8 text-white shadow-xl">
-              <h3 className="text-2xl font-bold mb-4">
-                Why Choose Your Visa Planner?
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  "Personal attention — your case is handled individually, never assembly-line processed",
-                  "Honest assessment upfront — we tell you about any challenges before you commit",
-                  "End-to-end support — from eligibility check through to VFS appointment day",
-                  "Kenya-focused expertise — we understand the specific needs of Kenyan applicants",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle size={20} className="text-accent shrink-0 mt-0.5" />
-                    <span className="text-sm text-primary-light">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+    <section className="py-20 sm:py-28 px-4 bg-neutral-50">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-sm tracking-widest uppercase text-accent font-medium mb-6">
+          UK Visa Consultancy · Nairobi, Kenya
+        </p>
+        <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-semibold text-primary leading-tight">
+          Expert UK Visa Guidance for Kenyans
+        </h1>
+        <p className="mt-8 text-lg sm:text-xl text-neutral-500 leading-relaxed max-w-2xl mx-auto">
+          We provide personal, end-to-end support for UK visa applications.
+          From your first eligibility check to VFS appointment day, every case
+          gets individual attention — never assembly-line processed.
+        </p>
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="/eligibility"
+            className="rounded-md bg-primary px-8 py-4 text-base font-medium text-white hover:bg-primary-dark transition-colors"
+          >
+            Check Your Eligibility
+          </Link>
+          <Link
+            href="/services"
+            className="rounded-md border border-neutral-300 px-8 py-4 text-base font-medium text-neutral-700 hover:border-primary hover:text-primary transition-colors"
+          >
+            Explore Services
+          </Link>
         </div>
       </div>
     </section>

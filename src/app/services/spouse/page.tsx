@@ -12,18 +12,18 @@ export const metadata: Metadata = {
 export default function SpouseVisaPage() {
   return (
     <>
-      <section className="bg-primary-light py-16 px-4">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-20 px-4 bg-neutral-50">
+        <div className="mx-auto max-w-3xl">
           <Link
             href="/services"
-            className="text-sm text-primary hover:underline mb-4 inline-block"
+            className="text-sm text-accent hover:underline mb-4 inline-block"
           >
             &larr; All Services
           </Link>
-          <h1 className="text-4xl font-bold text-neutral-900">
+          <h1 className="font-heading text-4xl sm:text-5xl font-semibold text-primary">
             Spouse/Partner Visa
           </h1>
-          <p className="mt-4 text-lg text-neutral-600 max-w-2xl">
+          <p className="mt-6 text-lg text-neutral-500 max-w-2xl leading-relaxed">
             The UK Spouse or Partner visa allows you to join your husband, wife,
             civil partner, or long-term partner who is a British citizen or has
             settled status in the UK.
@@ -31,15 +31,15 @@ export default function SpouseVisaPage() {
         </div>
       </section>
 
-      <section className="py-16 px-4">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-3 gap-12">
-            <div className="lg:col-span-2 space-y-10">
+      <section className="py-20 px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-3 gap-14">
+            <div className="lg:col-span-2 space-y-12">
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-4">
                   Who Is This Visa For?
                 </h2>
-                <p className="text-neutral-600 leading-relaxed">
+                <p className="text-neutral-500 leading-relaxed">
                   This visa is for the spouse, civil partner, or unmarried
                   partner of someone who is a British citizen, has settled status
                   (Indefinite Leave to Remain), or has refugee status in the UK.
@@ -48,7 +48,7 @@ export default function SpouseVisaPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-5">
                   Key Requirements
                 </h2>
                 <ul className="space-y-3">
@@ -61,15 +61,15 @@ export default function SpouseVisaPage() {
                     "Have suitable accommodation in the UK",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle size={20} className="text-primary shrink-0 mt-0.5" />
-                      <span className="text-neutral-600">{item}</span>
+                      <CheckCircle size={18} className="text-accent shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-neutral-500">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-5">
                   How We Help
                 </h2>
                 <ul className="space-y-3">
@@ -82,15 +82,15 @@ export default function SpouseVisaPage() {
                     "Support you through the entire application process",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckCircle size={20} className="text-accent shrink-0 mt-0.5" />
-                      <span className="text-neutral-600">{item}</span>
+                      <CheckCircle size={18} className="text-accent shrink-0 mt-0.5" strokeWidth={1.5} />
+                      <span className="text-neutral-500">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-5">
                   Common Questions
                 </h2>
                 <div className="space-y-4">
@@ -108,9 +108,9 @@ export default function SpouseVisaPage() {
                       a: "Yes. After 5 years on a spouse/partner visa (with extensions), you can apply for Indefinite Leave to Remain (permanent settlement) in the UK.",
                     },
                   ].map((faq) => (
-                    <div key={faq.q} className="rounded-lg border border-neutral-200 p-5">
-                      <h3 className="font-semibold text-neutral-900 mb-2">{faq.q}</h3>
-                      <p className="text-sm text-neutral-600">{faq.a}</p>
+                    <div key={faq.q} className="rounded-lg border border-neutral-200 p-6">
+                      <h3 className="font-semibold text-primary mb-2">{faq.q}</h3>
+                      <p className="text-sm text-neutral-500 leading-relaxed">{faq.a}</p>
                     </div>
                   ))}
                 </div>
@@ -118,41 +118,41 @@ export default function SpouseVisaPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="rounded-xl border border-neutral-200 p-6">
-                <h3 className="font-semibold text-neutral-900 mb-4">Quick Facts</h3>
-                <ul className="space-y-4 text-sm">
+              <div className="rounded-lg border border-neutral-200 p-8">
+                <h3 className="font-semibold text-primary mb-5">Quick Facts</h3>
+                <ul className="space-y-5 text-sm">
                   <li className="flex items-start gap-3">
-                    <Clock size={18} className="text-primary shrink-0 mt-0.5" />
+                    <Clock size={18} className="text-accent shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-neutral-900">Duration</p>
-                      <p className="text-neutral-600">2.5 years (renewable)</p>
+                      <p className="font-medium text-primary">Duration</p>
+                      <p className="text-neutral-500">2.5 years (renewable)</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <FileText size={18} className="text-primary shrink-0 mt-0.5" />
+                    <FileText size={18} className="text-accent shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-neutral-900">Processing Time</p>
-                      <p className="text-neutral-600">Up to 12 weeks</p>
+                      <p className="font-medium text-primary">Processing Time</p>
+                      <p className="text-neutral-500">Up to 12 weeks</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <AlertCircle size={18} className="text-primary shrink-0 mt-0.5" />
+                    <AlertCircle size={18} className="text-accent shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-neutral-900">Settlement</p>
-                      <p className="text-neutral-600">Eligible after 5 years</p>
+                      <p className="font-medium text-primary">Settlement</p>
+                      <p className="text-neutral-500">Eligible after 5 years</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
-              <div className="rounded-xl bg-primary p-6 text-white">
-                <h3 className="font-semibold mb-2">Joining Your Partner?</h3>
-                <p className="text-sm text-primary-light mb-4">
+              <div className="rounded-lg bg-primary p-8 text-white">
+                <h3 className="font-heading text-xl font-semibold mb-3">Joining Your Partner?</h3>
+                <p className="text-sm text-neutral-300 mb-6 leading-relaxed">
                   Find out if you qualify for a UK Spouse/Partner visa with our free assessment.
                 </p>
                 <Link
                   href="/eligibility"
-                  className="block rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold text-white hover:bg-accent-dark transition-colors"
+                  className="block rounded-md bg-accent px-6 py-3.5 text-center text-sm font-medium text-white hover:bg-accent-dark transition-colors"
                 >
                   Check Eligibility
                 </Link>

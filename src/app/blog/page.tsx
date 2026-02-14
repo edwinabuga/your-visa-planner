@@ -14,21 +14,21 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="bg-primary-light py-16 px-4">
-        <div className="mx-auto max-w-7xl">
-          <h1 className="text-4xl font-bold text-neutral-900">Blog</h1>
-          <p className="mt-4 text-lg text-neutral-600 max-w-2xl">
+      <section className="py-20 px-4 bg-neutral-50">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="font-heading text-4xl sm:text-5xl font-semibold text-primary">Blog</h1>
+          <p className="mt-6 text-lg text-neutral-500 max-w-2xl mx-auto leading-relaxed">
             Helpful guides, tips, and the latest news about UK visa applications
             from Kenya. Stay informed and prepared.
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-4">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-20 px-4">
+        <div className="mx-auto max-w-6xl">
           {posts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-neutral-600">
+              <p className="text-neutral-500">
                 No blog posts yet. Check back soon!
               </p>
             </div>
@@ -38,10 +38,10 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block rounded-xl border border-neutral-200 overflow-hidden hover:shadow-lg transition-shadow"
+                  className="group block rounded-lg border border-neutral-200 overflow-hidden hover:shadow-md hover:border-accent/40 transition-all"
                 >
                   <div className="bg-gradient-to-br from-primary to-primary-dark h-40 flex items-center justify-center p-6">
-                    <h3 className="text-white font-bold text-lg text-center leading-tight">
+                    <h3 className="text-white font-heading font-semibold text-lg text-center leading-tight">
                       {post.title}
                     </h3>
                   </div>
@@ -56,7 +56,7 @@ export default function BlogPage() {
                         })}
                       </time>
                     </div>
-                    <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+                    <p className="text-sm text-neutral-500 leading-relaxed mb-4">
                       {post.description}
                     </p>
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">

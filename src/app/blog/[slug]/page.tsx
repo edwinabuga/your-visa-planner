@@ -54,16 +54,16 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-primary-light py-16 px-4">
+      <section className="py-20 px-4 bg-neutral-50">
         <div className="mx-auto max-w-3xl">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1 text-sm text-primary hover:underline mb-6"
+            className="inline-flex items-center gap-1 text-sm text-accent hover:underline mb-6"
           >
             <ArrowLeft size={16} />
             Back to Blog
           </Link>
-          <h1 className="text-3xl sm:text-4xl font-bold text-neutral-900 leading-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl font-semibold text-primary leading-tight">
             {post.title}
           </h1>
           <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-neutral-500">
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-white dark:bg-neutral-950 px-3 py-1 text-xs font-medium text-primary"
+                  className="rounded-full bg-white px-3 py-1 text-xs font-medium text-primary"
                 >
                   {tag}
                 </span>

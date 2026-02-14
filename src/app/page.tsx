@@ -10,7 +10,7 @@ import {
   FileCheck,
   MessageSquare,
   Send,
-  Star,
+  Quote,
 } from "lucide-react";
 
 const services = [
@@ -54,25 +54,29 @@ const services = [
 const steps = [
   {
     icon: MessageSquare,
-    title: "1. Free Eligibility Check",
+    number: "01",
+    title: "Free Eligibility Check",
     description:
       "Complete our quick online assessment to find out which visa route suits your situation.",
   },
   {
     icon: FileCheck,
-    title: "2. Expert Consultation",
+    number: "02",
+    title: "Expert Consultation",
     description:
       "Meet with our consultant to discuss your case in detail and create a personalised plan.",
   },
   {
     icon: Send,
-    title: "3. Document Preparation",
+    number: "03",
+    title: "Document Preparation",
     description:
       "We help you gather, organise, and review all required documents to build a strong application.",
   },
   {
     icon: Plane,
-    title: "4. Application Submission",
+    number: "04",
+    title: "Application Submission",
     description:
       "We submit your application and support you through biometrics and any follow-up requests.",
   },
@@ -96,20 +100,80 @@ const testimonials = [
   },
 ];
 
+const packages = [
+  {
+    name: "Eligibility Check",
+    price: "Free",
+    description: "Quick online assessment to determine your visa options",
+    features: [
+      "Online questionnaire",
+      "Visa route recommendation",
+      "Response within 24 hours",
+    ],
+  },
+  {
+    name: "Standard Consultation",
+    price: "KSh 5,000",
+    description: "One-on-one consultation to discuss your case in depth",
+    features: [
+      "60-minute consultation",
+      "Personalised advice",
+      "Document checklist",
+      "Follow-up email summary",
+    ],
+    highlighted: true,
+  },
+  {
+    name: "Full Application Support",
+    price: "From KSh 25,000",
+    description: "End-to-end support from consultation to submission",
+    features: [
+      "Everything in Standard",
+      "Document preparation & review",
+      "Cover letter drafting",
+      "Application submission support",
+      "VFS appointment guidance",
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <>
       {/* Hero */}
       <Hero />
 
+      {/* Trust Bar */}
+      <section className="py-10 px-4 border-b border-neutral-200">
+        <div className="mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 text-center">
+          <div>
+            <p className="font-heading text-3xl font-semibold text-primary">100+</p>
+            <p className="text-sm text-neutral-500 mt-1">Successful Applications</p>
+          </div>
+          <div className="hidden sm:block w-px h-10 bg-neutral-200" />
+          <div>
+            <p className="font-heading text-3xl font-semibold text-primary">Nairobi</p>
+            <p className="text-sm text-neutral-500 mt-1">Based & Kenya-Focused</p>
+          </div>
+          <div className="hidden sm:block w-px h-10 bg-neutral-200" />
+          <div>
+            <p className="font-heading text-3xl font-semibold text-primary">Personal</p>
+            <p className="text-sm text-neutral-500 mt-1">Individual Case Handling</p>
+          </div>
+        </div>
+      </section>
+
       {/* Services Overview */}
-      <section className="py-16 px-4 bg-white dark:bg-transparent">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900">
-              UK Visa Services We Offer
+      <section className="py-20 px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-14">
+            <p className="text-sm tracking-widest uppercase text-accent font-medium mb-3">
+              What We Do
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-primary">
+              UK Visa Services
             </h2>
-            <p className="mt-4 text-lg text-neutral-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-neutral-500 max-w-xl mx-auto">
               Whether you&apos;re visiting, working, studying, or joining family
               in the UK, we have the expertise to help.
             </p>
@@ -123,27 +187,30 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-4 bg-neutral-50">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900">
+      <section className="py-20 px-4 bg-white">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-14">
+            <p className="text-sm tracking-widest uppercase text-accent font-medium mb-3">
+              Our Process
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-primary">
               How It Works
             </h2>
-            <p className="mt-4 text-lg text-neutral-600 max-w-2xl mx-auto">
-              Our simple four-step process takes the stress out of your UK visa
-              application.
+            <p className="mt-4 text-lg text-neutral-500 max-w-xl mx-auto">
+              A simple four-step process that takes the stress out of your UK
+              visa application.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {steps.map((step) => (
-              <div key={step.title} className="text-center">
-                <div className="mx-auto mb-4 inline-flex rounded-full bg-primary-light p-4">
-                  <step.icon size={28} className="text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+              <div key={step.title}>
+                <span className="font-heading text-4xl font-semibold text-neutral-200">
+                  {step.number}
+                </span>
+                <h3 className="text-lg font-semibold text-primary mt-3 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm text-neutral-500 leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -152,40 +219,80 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section className="py-20 px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-14">
+            <p className="text-sm tracking-widest uppercase text-accent font-medium mb-3">
+              Transparent Pricing
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-primary">
+              Clear, Upfront Fees
+            </h2>
+            <p className="mt-4 text-lg text-neutral-500 max-w-xl mx-auto">
+              No hidden charges. You know exactly what you&apos;re paying for
+              before you commit.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {packages.map((pkg) => (
+              <div
+                key={pkg.name}
+                className={`rounded-lg border p-8 ${pkg.highlighted
+                    ? "border-accent bg-accent-light"
+                    : "border-neutral-200 bg-white"
+                  }`}
+              >
+                <h3 className="font-heading text-xl font-semibold text-primary mb-1">
+                  {pkg.name}
+                </h3>
+                <p className="text-sm text-neutral-500 mb-5">{pkg.description}</p>
+                <p className="font-heading text-3xl font-semibold text-primary mb-6">
+                  {pkg.price}
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {pkg.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-2 text-sm text-neutral-600"
+                    >
+                      <span className="text-accent mt-0.5">✓</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-white dark:bg-transparent">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900">
+      <section className="py-20 px-4 bg-white">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center mb-14">
+            <p className="text-sm tracking-widest uppercase text-accent font-medium mb-3">
+              Client Stories
+            </p>
+            <h2 className="font-heading text-3xl sm:text-4xl font-semibold text-primary">
               What Our Clients Say
             </h2>
-            <p className="mt-4 text-lg text-neutral-600 max-w-2xl mx-auto">
-              Hear from people we&apos;ve helped achieve their UK visa goals.
-            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
               <div
                 key={testimonial.name}
-                className="rounded-xl border border-neutral-200 p-6"
+                className="border border-neutral-200 rounded-lg p-8"
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={18}
-                      className="fill-accent text-accent"
-                    />
-                  ))}
-                </div>
-                <p className="text-neutral-600 text-sm leading-relaxed mb-4">
+                <Quote size={24} className="text-accent/30 mb-4" strokeWidth={1.5} />
+                <p className="text-neutral-600 leading-relaxed mb-6">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
-                <div>
-                  <p className="font-semibold text-neutral-900">
+                <div className="pt-4 border-t border-neutral-100">
+                  <p className="font-semibold text-primary">
                     {testimonial.name}
                   </p>
-                  <p className="text-sm text-neutral-500">
+                  <p className="text-sm text-neutral-400">
                     {testimonial.location}
                   </p>
                 </div>

@@ -45,56 +45,54 @@ const otherVisas = [
 export default function OtherVisasPage() {
   return (
     <>
-      <section className="bg-primary-light py-16 px-4">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-20 px-4 bg-neutral-50">
+        <div className="mx-auto max-w-3xl">
           <Link
             href="/services"
-            className="text-sm text-primary hover:underline mb-4 inline-block"
+            className="text-sm text-accent hover:underline mb-4 inline-block"
           >
             &larr; All Services
           </Link>
-          <h1 className="text-4xl font-bold text-neutral-900">
+          <h1 className="font-heading text-4xl sm:text-5xl font-semibold text-primary">
             Other UK Visa Types
           </h1>
-          <p className="mt-4 text-lg text-neutral-600 max-w-2xl">
+          <p className="mt-6 text-lg text-neutral-500 max-w-2xl leading-relaxed">
             Beyond the main visa categories, there are many other UK immigration
             routes. Whatever your situation, we can help you find the right path.
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-4">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-20 px-4">
+        <div className="mx-auto max-w-6xl">
           <div className="grid sm:grid-cols-2 gap-6">
             {otherVisas.map((visa) => (
               <div
                 key={visa.title}
-                className="rounded-xl border border-neutral-200 p-6 hover:shadow-md transition-shadow"
+                className="rounded-lg border border-neutral-200 p-8 hover:border-accent/40 hover:shadow-md transition-all"
               >
-                <div className="mb-4 inline-flex rounded-lg bg-primary-light p-3">
-                  <Users size={24} className="text-primary" />
-                </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                <Users size={28} className="text-accent mb-4" strokeWidth={1.5} />
+                <h3 className="font-heading text-lg font-semibold text-primary mb-2">
                   {visa.title}
                 </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm text-neutral-500 leading-relaxed">
                   {visa.description}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 rounded-xl bg-neutral-50 p-8 text-center">
-            <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+          <div className="mt-14 rounded-lg bg-white border border-neutral-200 p-10 text-center">
+            <h2 className="font-heading text-2xl font-semibold text-primary mb-4">
               Not Sure Which Visa You Need?
             </h2>
-            <p className="text-neutral-600 mb-6 max-w-xl mx-auto">
+            <p className="text-neutral-500 mb-8 max-w-xl mx-auto">
               Our expert consultants can assess your situation and recommend the
               best visa route for you. Start with our free eligibility assessment.
             </p>
             <Link
               href="/eligibility"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-8 py-3 text-base font-semibold text-white hover:bg-accent-dark transition-colors"
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-8 py-3.5 text-base font-medium text-white hover:bg-accent-dark transition-colors"
             >
               Check Your Eligibility
               <ArrowRight size={18} />

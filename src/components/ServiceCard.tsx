@@ -17,20 +17,18 @@ export default function ServiceCard({
   return (
     <Link
       href={href}
-      className="group block rounded-xl border border-neutral-200 bg-white dark:bg-neutral-950 p-6 hover:shadow-lg hover:border-primary/30 transition-all"
+      className="group block rounded-lg border border-neutral-200 bg-white p-8 hover:border-accent/40 hover:shadow-md transition-all"
     >
-      <div className="mb-4 inline-flex rounded-lg bg-primary-light p-3">
-        <Icon size={24} className="text-primary" />
-      </div>
-      <h3 className="text-lg font-semibold text-neutral-900 mb-2 group-hover:text-primary transition-colors">
+      <Icon size={28} className="text-accent mb-5" strokeWidth={1.5} />
+      <h3 className="font-heading text-xl font-semibold text-primary mb-3 group-hover:text-accent transition-colors">
         {title}
       </h3>
-      <p className="text-sm text-neutral-600 leading-relaxed mb-4">
+      <p className="text-neutral-500 leading-relaxed mb-5">
         {description}
       </p>
-      <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
+      <span className="inline-flex items-center gap-1.5 text-sm font-medium text-accent">
         Learn more
-        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
       </span>
     </Link>
   );

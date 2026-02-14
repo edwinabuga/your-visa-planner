@@ -1,53 +1,37 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme inline {
-  --color-primary: #0f6b6e;
-  --color-primary-dark: #0a4f52;
-  --color-primary-light: #e6f4f4;
-  --color-accent: #d4963a;
-  --color-accent-dark: #b87d2e;
-  --color-accent-light: #fdf3e3;
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
-  --font-sans: var(--font-inter);
-}
+  /* Primary — deep navy */
+  --color-primary: #1a2332;
+  --color-primary-dark: #0f1620;
+  --color-primary-light: #f0eeeb;
 
-/* Dark mode token overrides */
-.dark {
-  --color-primary-light: #0a2e2f;
-  --color-accent-light: #2e2209;
-  --color-neutral-50: #1a1a1a;
-  --color-neutral-100: #262626;
-  --color-neutral-200: #333333;
-  --color-neutral-300: #404040;
-  --color-neutral-400: #737373;
-  --color-neutral-500: #a3a3a3;
-  --color-neutral-600: #d4d4d4;
-  --color-neutral-700: #e5e5e5;
-  --color-neutral-800: #f5f5f5;
-  --color-neutral-900: #fafafa;
-  color-scheme: dark;
+  /* Accent — warm gold */
+  --color-accent: #c8953c;
+  --color-accent-dark: #a87a2e;
+  --color-accent-light: #fdf6ec;
+
+  /* Neutrals — warm-tinted */
+  --color-neutral-50: #faf9f7;
+  --color-neutral-100: #f3f1ed;
+  --color-neutral-200: #e8e5df;
+  --color-neutral-300: #d4d0c8;
+  --color-neutral-400: #a8a299;
+  --color-neutral-500: #7d7770;
+  --color-neutral-600: #5c564f;
+  --color-neutral-700: #3d3832;
+  --color-neutral-800: #2a251f;
+  --color-neutral-900: #1a1612;
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
 body {
-  background: var(--color-body-bg, #ffffff);
-  color: var(--color-neutral-900);
+  background: #faf9f7;
+  color: var(--color-neutral-800);
   font-family: var(--font-sans), system-ui, sans-serif;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.dark body {
-  --color-body-bg: #121212;
 }
 
 /* Smooth scrolling */
@@ -57,6 +41,18 @@ html {
 
 /* Focus styles for accessibility */
 *:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+}
+
+/* Serif heading utility */
+.font-heading {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+/* Subtle horizontal rule */
+.divider {
+  border: none;
+  height: 1px;
+  background: var(--color-neutral-200);
 }

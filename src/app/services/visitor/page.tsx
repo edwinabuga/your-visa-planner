@@ -13,18 +13,18 @@ export default function VisitorVisaPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-primary-light py-16 px-4">
-        <div className="mx-auto max-w-7xl">
+      <section className="py-20 px-4 bg-neutral-50">
+        <div className="mx-auto max-w-3xl">
           <Link
             href="/services"
-            className="text-sm text-primary hover:underline mb-4 inline-block"
+            className="text-sm text-accent hover:underline mb-4 inline-block"
           >
             &larr; All Services
           </Link>
-          <h1 className="text-4xl font-bold text-neutral-900">
+          <h1 className="font-heading text-4xl sm:text-5xl font-semibold text-primary">
             Standard Visitor Visa
           </h1>
-          <p className="mt-4 text-lg text-neutral-600 max-w-2xl">
+          <p className="mt-6 text-lg text-neutral-500 max-w-2xl leading-relaxed">
             The UK Standard Visitor visa allows you to visit the UK for up to 6
             months for tourism, business, medical treatment, or to see family
             and friends.
@@ -32,16 +32,16 @@ export default function VisitorVisaPage() {
         </div>
       </section>
 
-      <section className="py-16 px-4">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-3 gap-12">
+      <section className="py-20 px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-3 gap-14">
             {/* Main content */}
-            <div className="lg:col-span-2 space-y-10">
+            <div className="lg:col-span-2 space-y-12">
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-4">
                   Who Is This Visa For?
                 </h2>
-                <p className="text-neutral-600 leading-relaxed">
+                <p className="text-neutral-500 leading-relaxed">
                   The Standard Visitor visa is for people who want to visit the
                   UK temporarily. This includes tourists, people visiting family,
                   those attending business meetings or conferences, and people
@@ -50,7 +50,7 @@ export default function VisitorVisaPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-5">
                   Key Requirements
                 </h2>
                 <ul className="space-y-3">
@@ -64,20 +64,21 @@ export default function VisitorVisaPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle
-                        size={20}
-                        className="text-primary shrink-0 mt-0.5"
+                        size={18}
+                        className="text-accent shrink-0 mt-0.5"
+                        strokeWidth={1.5}
                       />
-                      <span className="text-neutral-600">{item}</span>
+                      <span className="text-neutral-500">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-5">
                   How We Help
                 </h2>
-                <p className="text-neutral-600 leading-relaxed mb-4">
+                <p className="text-neutral-500 leading-relaxed mb-4">
                   Our experienced consultants will:
                 </p>
                 <ul className="space-y-3">
@@ -91,17 +92,18 @@ export default function VisitorVisaPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle
-                        size={20}
+                        size={18}
                         className="text-accent shrink-0 mt-0.5"
+                        strokeWidth={1.5}
                       />
-                      <span className="text-neutral-600">{item}</span>
+                      <span className="text-neutral-500">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
+                <h2 className="font-heading text-2xl font-semibold text-primary mb-5">
                   Common Questions
                 </h2>
                 <div className="space-y-4">
@@ -121,12 +123,12 @@ export default function VisitorVisaPage() {
                   ].map((faq) => (
                     <div
                       key={faq.q}
-                      className="rounded-lg border border-neutral-200 p-5"
+                      className="rounded-lg border border-neutral-200 p-6"
                     >
-                      <h3 className="font-semibold text-neutral-900 mb-2">
+                      <h3 className="font-semibold text-primary mb-2">
                         {faq.q}
                       </h3>
-                      <p className="text-sm text-neutral-600">{faq.a}</p>
+                      <p className="text-sm text-neutral-500 leading-relaxed">{faq.a}</p>
                     </div>
                   ))}
                 </div>
@@ -135,40 +137,42 @@ export default function VisitorVisaPage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              <div className="rounded-xl border border-neutral-200 p-6">
-                <h3 className="font-semibold text-neutral-900 mb-4">
+              <div className="rounded-lg border border-neutral-200 p-8">
+                <h3 className="font-semibold text-primary mb-5">
                   Quick Facts
                 </h3>
-                <ul className="space-y-4 text-sm">
+                <ul className="space-y-5 text-sm">
                   <li className="flex items-start gap-3">
-                    <Clock size={18} className="text-primary shrink-0 mt-0.5" />
+                    <Clock size={18} className="text-accent shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-neutral-900">Duration</p>
-                      <p className="text-neutral-600">Up to 6 months</p>
+                      <p className="font-medium text-primary">Duration</p>
+                      <p className="text-neutral-500">Up to 6 months</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <FileText
                       size={18}
-                      className="text-primary shrink-0 mt-0.5"
+                      className="text-accent shrink-0 mt-0.5"
+                      strokeWidth={1.5}
                     />
                     <div>
-                      <p className="font-medium text-neutral-900">
+                      <p className="font-medium text-primary">
                         Processing Time
                       </p>
-                      <p className="text-neutral-600">Around 3 weeks</p>
+                      <p className="text-neutral-500">Around 3 weeks</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <AlertCircle
                       size={18}
-                      className="text-primary shrink-0 mt-0.5"
+                      className="text-accent shrink-0 mt-0.5"
+                      strokeWidth={1.5}
                     />
                     <div>
-                      <p className="font-medium text-neutral-900">
+                      <p className="font-medium text-primary">
                         Application Fee
                       </p>
-                      <p className="text-neutral-600">
+                      <p className="text-neutral-500">
                         From &pound;100 (government fee)
                       </p>
                     </div>
@@ -176,15 +180,15 @@ export default function VisitorVisaPage() {
                 </ul>
               </div>
 
-              <div className="rounded-xl bg-primary p-6 text-white">
-                <h3 className="font-semibold mb-2">Ready to Apply?</h3>
-                <p className="text-sm text-primary-light mb-4">
+              <div className="rounded-lg bg-primary p-8 text-white">
+                <h3 className="font-heading text-xl font-semibold mb-3">Ready to Apply?</h3>
+                <p className="text-sm text-neutral-300 mb-6 leading-relaxed">
                   Start with our free eligibility check to see if a visitor visa
                   is right for you.
                 </p>
                 <Link
                   href="/eligibility"
-                  className="block rounded-lg bg-accent px-6 py-3 text-center text-sm font-semibold text-white hover:bg-accent-dark transition-colors"
+                  className="block rounded-md bg-accent px-6 py-3.5 text-center text-sm font-medium text-white hover:bg-accent-dark transition-colors"
                 >
                   Check Eligibility
                 </Link>
