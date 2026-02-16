@@ -4,19 +4,22 @@ import EligibilityForm from "@/components/EligibilityForm";
 export const metadata: Metadata = {
   title: "Check Your Eligibility",
   description:
-    "Take our free UK visa eligibility assessment. Find out which visa route is right for you in just a few minutes.",
+    "Take our free visa eligibility assessment. Find out which visa route is right for you in just a few minutes.",
 };
 
 export default function EligibilityPage() {
   return (
     <>
-      <section className="bg-primary-light py-16 px-4">
-        <div className="mx-auto max-w-7xl">
-          <h1 className="text-4xl font-bold text-neutral-900">
+      <section className="py-20 sm:py-28 px-4 pt-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-4">
+            Free Assessment
+          </p>
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
             Check Your Eligibility
           </h1>
-          <p className="mt-4 text-lg text-neutral-600 max-w-2xl">
-            Complete our free eligibility assessment to find out which UK visa
+          <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto">
+            Complete our free eligibility assessment to find out which visa
             route is best for your situation. It only takes a few minutes.
           </p>
         </div>
@@ -50,12 +53,12 @@ export default function EligibilityPage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="rounded-lg border border-neutral-200 p-5 text-center"
+                className="border border-zinc-800 p-5 text-center"
               >
-                <h3 className="font-semibold text-neutral-900 mb-2">
+                <h3 className="font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-neutral-600">{item.description}</p>
+                <p className="text-sm text-zinc-500">{item.description}</p>
               </div>
             ))}
           </div>

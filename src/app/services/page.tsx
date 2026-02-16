@@ -1,80 +1,75 @@
 import type { Metadata } from "next";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
-import { Plane, Briefcase, GraduationCap, Heart, Users } from "lucide-react";
+import CompareServicesTable from "@/components/CompareServicesTable";
+import { Plane, FileText, Globe, Package } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "UK Visa Services",
+  title: "Visa Services",
   description:
-    "Comprehensive UK visa consultancy services including Visitor, Skilled Worker, Student, Spouse, and other visa types. Based in Nairobi, Kenya.",
+    "Professional visa consultancy services for UK, Schengen, US, UAE, and other destinations. Based in Nairobi, Kenya.",
 };
 
 const services = [
   {
-    title: "Standard Visitor Visa",
+    title: "UK Standard Visitor Visa",
     description:
       "Planning a trip to the UK for tourism, business, or to visit family? We prepare your visitor visa application to give you the best chance of approval.",
-    href: "/services/visitor",
+    href: "/services/uk-visitor",
     icon: Plane,
   },
   {
-    title: "Skilled Worker Visa",
+    title: "Other UK Visas",
     description:
-      "Moving to the UK for employment? We guide you through the Skilled Worker visa process, including Certificate of Sponsorship requirements.",
-    href: "/services/skilled-worker",
-    icon: Briefcase,
+      "Skilled Worker, Student, Spouse, Transit, and more. Custom pricing tailored to the complexity of your case.",
+    href: "/services/uk-other",
+    icon: FileText,
   },
   {
-    title: "Student Visa",
+    title: "Schengen Visa",
     description:
-      "Studying at a UK institution? We help with your student visa application, from CAS letters to financial documentation.",
-    href: "/services/student",
-    icon: GraduationCap,
+      "Travel to Europe with full application support. We handle tourism, business, and family visit Schengen applications.",
+    href: "/services/schengen",
+    icon: Globe,
   },
   {
-    title: "Spouse/Partner Visa",
+    title: "US, UAE & Other Destinations",
     description:
-      "Joining your partner in the UK? We help you navigate relationship evidence, financial requirements, and English language needs.",
-    href: "/services/spouse",
-    icon: Heart,
-  },
-  {
-    title: "Other Visa Types",
-    description:
-      "Child dependant visas, transit visas, ancestry visas, and other UK immigration routes. Whatever your situation, we can help.",
-    href: "/services/other",
-    icon: Users,
+      "Custom documentation and visa support packages for the United States, UAE, and other international destinations.",
+    href: "/services/custom",
+    icon: Package,
   },
 ];
 
 export default function ServicesPage() {
   return (
     <>
-      <section className="py-20 px-4 bg-neutral-50">
+      <section className="py-20 sm:py-28 px-4 pt-32">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm tracking-widest uppercase text-accent font-medium mb-4">
+          <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-4">
             Our Services
           </p>
-          <h1 className="font-heading text-4xl sm:text-5xl font-semibold text-primary">
-            UK Visa Services
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+            Visa Services
           </h1>
-          <p className="mt-6 text-lg text-neutral-500 max-w-2xl mx-auto">
-            We offer expert consultancy for all major UK visa categories. Select
-            a service below to learn more about how we can help with your
-            specific situation.
+          <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto">
+            Expert consultancy for UK, Schengen, US, UAE, and other
+            destinations. Select a service below to learn more.
           </p>
         </div>
       </section>
 
       <section className="py-20 px-4">
         <div className="mx-auto max-w-6xl">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
           </div>
         </div>
       </section>
+
+      <CompareServicesTable />
 
       <CTASection />
     </>

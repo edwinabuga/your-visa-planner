@@ -33,40 +33,39 @@ export default async function BlogPostPage({ params }: Props) {
     notFound();
   }
 
-  // Simple markdown-to-HTML rendering for MDX content
-  // In production, you'd use a full MDX renderer
   const contentHtml = post.content
     .split("\n")
     .map((line) => {
       if (line.startsWith("## "))
-        return `<h2 class="text-2xl font-bold text-neutral-900 mt-10 mb-4">${line.slice(3)}</h2>`;
+        return `<h2 class="text-2xl font-bold text-white mt-10 mb-4">${line.slice(3)}</h2>`;
       if (line.startsWith("### "))
-        return `<h3 class="text-xl font-semibold text-neutral-900 mt-8 mb-3">${line.slice(4)}</h3>`;
+        return `<h3 class="text-xl font-semibold text-white mt-8 mb-3">${line.slice(4)}</h3>`;
       if (line.startsWith("- **"))
-        return `<li class="ml-4 text-neutral-600">${line.slice(2).replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")}</li>`;
+        return `<li class="ml-4 text-zinc-400">${line.slice(2).replace(/\*\*(.*?)\*\*/g, "<strong class='text-zinc-200'>$1</strong>")}</li>`;
       if (line.startsWith("- "))
-        return `<li class="ml-4 text-neutral-600">${line.slice(2)}</li>`;
-      if (line.startsWith("---")) return `<hr class="my-8 border-neutral-200" />`;
+        return `<li class="ml-4 text-zinc-400">${line.slice(2)}</li>`;
+      if (line.startsWith("---"))
+        return `<hr class="my-8 border-zinc-800" />`;
       if (line.trim() === "") return "";
-      return `<p class="text-neutral-600 leading-relaxed mb-4">${line.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary hover:underline">$1</a>')}</p>`;
+      return `<p class="text-zinc-400 leading-relaxed mb-4">${line.replace(/\*\*(.*?)\*\*/g, "<strong class='text-zinc-200'>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-bronze-400 hover:underline">$1</a>')}</p>`;
     })
     .join("\n");
 
   return (
     <>
-      <section className="py-20 px-4 bg-neutral-50">
+      <section className="py-20 sm:py-28 px-4 pt-32">
         <div className="mx-auto max-w-3xl">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1 text-sm text-accent hover:underline mb-6"
+            className="inline-flex items-center gap-1 text-sm text-bronze-400 hover:underline mb-6"
           >
             <ArrowLeft size={16} />
             Back to Blog
           </Link>
-          <h1 className="font-heading text-3xl sm:text-4xl font-semibold text-primary leading-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-white leading-tight">
             {post.title}
           </h1>
-          <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-neutral-500">
+          <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-zinc-400">
             <span className="flex items-center gap-1">
               <User size={14} />
               {post.author}
@@ -87,7 +86,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-white px-3 py-1 text-xs font-medium text-primary"
+                  className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white"
                 >
                   {tag}
                 </span>
@@ -105,7 +104,7 @@ export default async function BlogPostPage({ params }: Props) {
       </article>
 
       <CTASection
-        title="Need Help With Your UK Visa?"
+        title="Need Help With Your Visa?"
         description="Our expert consultants are ready to help you with your application. Start with a free eligibility assessment today."
       />
     </>

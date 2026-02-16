@@ -14,34 +14,35 @@ const inter = Inter({
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourvisaplanner.com"),
   title: {
-    default: "Your Visa Planner | UK Visa Consultancy in Nairobi, Kenya",
+    default: "Your Visa Planner | Visa Consultancy in Nairobi, Kenya",
     template: "%s | Your Visa Planner",
   },
   description:
-    "Professional UK visa consultancy based in Nairobi, Kenya. Expert guidance for Visitor, Skilled Worker, Student, Spouse, and other UK visas.",
+    "Professional visa consultancy based in Nairobi, Kenya. Expert guidance for UK, Schengen, US, UAE, and other international visas.",
   keywords: [
-    "UK visa",
     "visa consultancy",
     "Nairobi",
     "Kenya",
-    "UK visitor visa",
+    "UK visa",
+    "Schengen visa",
+    "US visa",
+    "UAE visa",
+    "visitor visa",
     "skilled worker visa",
-    "student visa",
-    "spouse visa",
   ],
   openGraph: {
     type: "website",
     locale: "en_GB",
     siteName: "Your Visa Planner",
-    title: "Your Visa Planner | UK Visa Consultancy in Nairobi, Kenya",
+    title: "Your Visa Planner | Visa Consultancy in Nairobi, Kenya",
     description:
-      "Professional UK visa consultancy based in Nairobi, Kenya. Expert guidance for Visitor, Skilled Worker, Student, Spouse, and other UK visas.",
+      "Professional visa consultancy based in Nairobi, Kenya. Expert guidance for UK, Schengen, US, UAE, and other international visas.",
   },
   twitter: {
     card: "summary_large_image",
@@ -58,7 +59,7 @@ export default function RootLayout({
       <head>
         <JsonLd />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />

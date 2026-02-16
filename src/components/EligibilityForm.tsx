@@ -14,13 +14,13 @@ import type { EligibilityFormData, FormApiResponse } from "@/lib/types";
 const TOTAL_STEPS = 7;
 
 const inputClass =
-  "w-full rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none";
-const labelClass = "block text-sm font-medium text-neutral-700 mb-1";
+  "w-full rounded-lg border border-zinc-700 bg-zinc-900/50 px-4 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-bronze-500 focus:ring-1 focus:ring-bronze-500 outline-none";
+const labelClass = "block text-sm font-medium text-zinc-300 mb-1";
 const radioGroupClass = "flex flex-col gap-2.5 mt-1.5";
 const radioLabelClass =
-  "flex items-center gap-2.5 text-sm text-neutral-700 cursor-pointer rounded-lg border border-neutral-200 bg-white px-4 py-3 hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-primary-light transition-colors";
+  "flex items-center gap-2.5 text-sm text-zinc-300 cursor-pointer rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 hover:border-bronze-500/40 has-[:checked]:border-bronze-500 has-[:checked]:bg-bronze-950/30 transition-colors";
 const checkboxLabelClass =
-  "flex items-center gap-2.5 text-sm text-neutral-700 cursor-pointer rounded-lg border border-neutral-200 bg-white px-4 py-3 hover:border-primary/40 has-[:checked]:border-primary has-[:checked]:bg-primary-light transition-colors";
+  "flex items-center gap-2.5 text-sm text-zinc-300 cursor-pointer rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 hover:border-bronze-500/40 has-[:checked]:border-bronze-500 has-[:checked]:bg-bronze-950/30 transition-colors";
 
 const emptyFormData: EligibilityFormData = {
   firstName: "",
@@ -139,18 +139,18 @@ export default function EligibilityForm() {
   if (status === "submitted") {
     const whatsappMessage = `Hello! I just completed the eligibility assessment on your website. My name is ${data.firstName} ${data.secondName}. Looking forward to hearing from you!`;
     return (
-      <div className="rounded-xl bg-primary-light p-8 sm:p-12 text-center">
-        <div className="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-3">
-          <CheckCircle size={32} className="text-primary" />
+      <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-8 sm:p-12 text-center">
+        <div className="mx-auto mb-4 inline-flex rounded-full bg-bronze-500/10 p-3">
+          <CheckCircle size={32} className="text-bronze-400" />
         </div>
-        <h2 className="text-2xl font-bold text-neutral-900 mb-2">
+        <h2 className="text-2xl font-bold text-white mb-2">
           Assessment Submitted!
         </h2>
-        <p className="text-neutral-600 mb-2">
+        <p className="text-zinc-400 mb-2">
           Thank you, {data.firstName}. We have received your eligibility
           assessment.
         </p>
-        <p className="text-sm text-neutral-500 mb-8">
+        <p className="text-sm text-zinc-500 mb-8">
           Edwin will review your details and get back to you within 24 hours.
           For a faster response, continue on WhatsApp.
         </p>
@@ -159,14 +159,14 @@ export default function EligibilityForm() {
             href={getWhatsAppUrl(whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-8 py-3.5 text-base font-semibold text-white hover:bg-[#20bd5a] transition-colors"
+            className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-8 py-3.5 text-base font-semibold text-white hover:bg-[#20bd5a] transition-colors"
           >
             <MessageCircle size={20} />
             Continue on WhatsApp
           </a>
           <a
             href="/"
-            className="flex items-center justify-center gap-2 rounded-lg border border-neutral-300 px-8 py-3 text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+            className="flex items-center justify-center gap-2 rounded-full border border-zinc-700 px-8 py-3 text-sm font-medium text-zinc-300 hover:bg-zinc-800 transition-colors"
           >
             Back to Homepage
             <ArrowRight size={16} />
@@ -181,15 +181,15 @@ export default function EligibilityForm() {
     <div>
       {/* Progress bar */}
       <div className="mb-8">
-        <div className="flex justify-between text-xs text-neutral-500 mb-2">
+        <div className="flex justify-between text-xs text-zinc-500 mb-2">
           <span>
             Step {step} of {TOTAL_STEPS}
           </span>
           <span>{Math.round((step / TOTAL_STEPS) * 100)}%</span>
         </div>
-        <div className="h-2 rounded-full bg-neutral-200">
+        <div className="h-2 rounded-full bg-zinc-800">
           <div
-            className="h-2 rounded-full bg-primary transition-all duration-300"
+            className="h-2 rounded-full bg-gradient-to-r from-bronze-600 to-bronze-400 transition-all duration-300"
             style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
           />
         </div>
@@ -197,8 +197,8 @@ export default function EligibilityForm() {
 
       {/* Error banner */}
       {status === "error" && (
-        <div className="rounded-lg bg-red-50 border border-red-200 p-4 mb-6">
-          <p className="text-sm text-red-700">{errorMessage}</p>
+        <div className="rounded-lg bg-red-950/30 border border-red-800 p-4 mb-6">
+          <p className="text-sm text-red-400">{errorMessage}</p>
         </div>
       )}
 
@@ -260,7 +260,7 @@ export default function EligibilityForm() {
                         onChange={(e) =>
                           update({ purposeOfVisit: e.target.value })
                         }
-                        className="accent-primary"
+                        className="accent-bronze-500"
                       />
                       {opt}
                     </label>
@@ -300,7 +300,7 @@ export default function EligibilityForm() {
                     required
                     inputMode="numeric"
                     pattern="[0-9]*"
-                    className="rounded-lg border border-neutral-300 bg-white px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none w-full"
+                    className={inputClass}
                     placeholder="e.g. 2"
                     value={data.stayDurationAmount}
                     onChange={(e) => {
@@ -310,7 +310,7 @@ export default function EligibilityForm() {
                   />
                   <select
                     id="stayDurationUnit"
-                    className="rounded-lg border border-neutral-300 px-4 py-2.5 text-sm text-neutral-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none w-32 bg-white"
+                    className="rounded-lg border border-zinc-700 bg-zinc-900/50 px-4 py-2.5 text-sm text-white focus:border-bronze-500 focus:ring-1 focus:ring-bronze-500 outline-none w-32"
                     value={data.stayDurationUnit}
                     onChange={(e) =>
                       update({ stayDurationUnit: e.target.value })
@@ -350,7 +350,7 @@ export default function EligibilityForm() {
                         onChange={(e) =>
                           update({ employmentStatus: e.target.value })
                         }
-                        className="accent-primary"
+                        className="accent-bronze-500"
                       />
                       {opt}
                     </label>
@@ -444,7 +444,7 @@ export default function EligibilityForm() {
                         onChange={(e) =>
                           update({ bankStatements: e.target.value })
                         }
-                        className="accent-primary"
+                        className="accent-bronze-500"
                       />
                       {opt}
                     </label>
@@ -468,7 +468,7 @@ export default function EligibilityForm() {
                         type="checkbox"
                         checked={data.financialTies.includes(opt)}
                         onChange={() => toggleArrayField("financialTies", opt)}
-                        className="accent-primary"
+                        className="accent-bronze-500"
                       />
                       {opt}
                     </label>
@@ -500,7 +500,7 @@ export default function EligibilityForm() {
                         onChange={(e) =>
                           update({ maritalStatus: e.target.value })
                         }
-                        className="accent-primary"
+                        className="accent-bronze-500"
                       />
                       {opt}
                     </label>
@@ -525,7 +525,7 @@ export default function EligibilityForm() {
                         type="checkbox"
                         checked={data.tiesToKenya.includes(opt)}
                         onChange={() => toggleArrayField("tiesToKenya", opt)}
-                        className="accent-primary"
+                        className="accent-bronze-500"
                       />
                       {opt}
                     </label>
@@ -558,7 +558,7 @@ export default function EligibilityForm() {
                         onChange={(e) =>
                           update({ previousUkVisa: e.target.value })
                         }
-                        className="accent-primary"
+                        className="accent-bronze-500"
                       />
                       {opt}
                     </label>
@@ -582,7 +582,7 @@ export default function EligibilityForm() {
                             onChange={(e) =>
                               update({ timesRefused: e.target.value })
                             }
-                            className="accent-primary"
+                            className="accent-bronze-500"
                           />
                           {opt}
                         </label>
@@ -625,7 +625,7 @@ export default function EligibilityForm() {
                         onChange={(e) =>
                           update({ internationalTravel: e.target.value })
                         }
-                        className="accent-primary"
+                        className="accent-bronze-500"
                       />
                       {opt}
                     </label>
@@ -669,14 +669,14 @@ export default function EligibilityForm() {
                 />
               </div>
               <div className="pt-2">
-                <label className="flex items-start gap-3 text-sm text-neutral-600 cursor-pointer">
+                <label className="flex items-start gap-3 text-sm text-zinc-400 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={data.disclaimerAccepted}
                     onChange={(e) =>
                       update({ disclaimerAccepted: e.target.checked })
                     }
-                    className="accent-primary mt-0.5"
+                    className="accent-bronze-500 mt-0.5"
                   />
                   <span>
                     I understand that this is a free eligibility assessment and
@@ -697,7 +697,7 @@ export default function EligibilityForm() {
           <button
             type="button"
             onClick={back}
-            className="flex items-center gap-2 rounded-lg border border-neutral-300 px-6 py-3 text-sm font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+            className="flex items-center gap-2 rounded-full border border-zinc-700 px-6 py-3 text-sm font-medium text-zinc-300 hover:bg-zinc-800 transition-colors"
           >
             <ArrowLeft size={16} />
             Back
@@ -711,7 +711,7 @@ export default function EligibilityForm() {
             type="button"
             onClick={next}
             disabled={!canAdvance()}
-            className="flex items-center gap-2 rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-white hover:bg-primary-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 rounded-full bg-gradient-to-r from-bronze-600 to-bronze-400 px-8 py-3 text-sm font-semibold text-white hover:from-bronze-500 hover:to-bronze-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Next
             <ArrowRight size={16} />
@@ -721,7 +721,7 @@ export default function EligibilityForm() {
             type="button"
             onClick={handleSubmit}
             disabled={!canAdvance() || status === "submitting"}
-            className="flex items-center gap-2 rounded-lg bg-accent px-8 py-3 text-sm font-semibold text-white hover:bg-accent-dark transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 rounded-full bg-gradient-to-r from-bronze-600 to-bronze-400 px-8 py-3 text-sm font-semibold text-white hover:from-bronze-500 hover:to-bronze-300 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === "submitting" ? (
               <>
@@ -747,7 +747,7 @@ function StepWrapper({
 }) {
   return (
     <div>
-      <h2 className="text-lg font-semibold text-neutral-900 mb-5">{title}</h2>
+      <h2 className="text-lg font-semibold text-white mb-5">{title}</h2>
       {children}
     </div>
   );

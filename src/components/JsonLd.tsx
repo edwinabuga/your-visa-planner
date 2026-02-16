@@ -4,7 +4,7 @@ export default function JsonLd() {
     "@type": "ProfessionalService",
     name: "Your Visa Planner",
     description:
-      "Professional UK visa consultancy based in Nairobi, Kenya. Expert guidance for Visitor, Skilled Worker, Student, Spouse, and other UK visas.",
+      "Professional visa consultancy based in Nairobi, Kenya. Expert guidance for UK, Schengen, US, UAE, and other international visas.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://yourvisaplanner.com",
     telephone: `+${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "254796544253"}`,
     email: "edwin@yourvisaplanner.com",
@@ -21,12 +21,15 @@ export default function JsonLd() {
     areaServed: [
       { "@type": "Country", name: "Kenya" },
       { "@type": "Country", name: "United Kingdom" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Country", name: "United Arab Emirates" },
     ],
     serviceType: "Visa Consultancy",
     founder: {
       "@type": "Person",
-      name: "Edwin Abuga",
+      name: "Edwin Abuga Gekonge",
     },
+    foundingDate: "2025-11",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

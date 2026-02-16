@@ -4,7 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/utils";
 
 export default function WhatsAppButton() {
-  const url = getWhatsAppUrl("Hello! I'd like to enquire about UK visa services.");
+  const url = getWhatsAppUrl();
 
   return (
     <a

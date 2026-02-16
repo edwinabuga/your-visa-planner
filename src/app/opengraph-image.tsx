@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Your Visa Planner — UK Visa Consultancy in Nairobi, Kenya";
+export const alt = "Your Visa Planner — Visa Consultancy in Nairobi, Kenya";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -17,7 +17,7 @@ export default function OGImage() {
           width: "100%",
           height: "100%",
           padding: "80px",
-          background: "linear-gradient(135deg, #0f6b6e 0%, #0a4f52 100%)",
+          background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)",
           color: "white",
           fontFamily: "system-ui, sans-serif",
         }}
@@ -35,7 +35,7 @@ export default function OGImage() {
               width: "48px",
               height: "48px",
               borderRadius: "12px",
-              background: "rgba(255,255,255,0.2)",
+              background: "rgba(194, 126, 84, 0.3)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -58,7 +58,7 @@ export default function OGImage() {
             maxWidth: "800px",
           }}
         >
-          Expert UK Visa Consultancy in Nairobi
+          Visa Applications, Mastered from the Inside.
         </div>
         <div
           style={{
@@ -68,8 +68,8 @@ export default function OGImage() {
             maxWidth: "700px",
           }}
         >
-          Professional guidance for Visitor, Skilled Worker, Student, Spouse &
-          other UK visas. Trusted by hundreds of Kenyans.
+          Professional guidance for UK, Schengen, US, UAE & other international
+          visas. Based in Nairobi, Kenya.
         </div>
         <div
           style={{
@@ -80,9 +80,9 @@ export default function OGImage() {
         >
           <div
             style={{
-              background: "#d4963a",
+              background: "linear-gradient(to right, #b46646, #ce9b77)",
               padding: "14px 32px",
-              borderRadius: "12px",
+              borderRadius: "999px",
               fontSize: "20px",
               fontWeight: 700,
             }}
@@ -91,9 +91,9 @@ export default function OGImage() {
           </div>
           <div
             style={{
-              border: "2px solid rgba(255,255,255,0.5)",
+              border: "2px solid rgba(206, 155, 119, 0.5)",
               padding: "14px 32px",
-              borderRadius: "12px",
+              borderRadius: "999px",
               fontSize: "20px",
               fontWeight: 600,
             }}
