@@ -4,7 +4,7 @@ import { getWhatsAppUrl } from "@/lib/utils";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12">
       {/* Background radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(194,126,84,0.08),transparent_70%)]" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-bronze-900/40 to-transparent" />
@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="inline-flex items-center gap-2 border border-bronze-500/30 rounded-full px-4 py-1.5 mb-8 bg-bronze-950/30 backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
           <span className="text-xs uppercase tracking-widest text-bronze-200">
-            Insider Visa Application Center Experience
+            Insider Experience
           </span>
         </div>
 
@@ -27,7 +27,7 @@ export default function Hero() {
         </h1>
 
         {/* Subheading */}
-        <p className="max-w-2xl mx-auto text-lg text-zinc-400 leading-relaxed mb-12">
+        <p className="max-w-2xl mx-auto text-lg text-zinc-400 leading-relaxed mb-10">
           Stop guessing. Get guidance from a consultant who handled applications
           daily for years from behind the counter. We turn anxiety into approval
           for the UK, Schengen, USA, and beyond.
@@ -52,31 +52,31 @@ export default function Hero() {
         </div>
 
         {/* VFS / TLS Logo Strip */}
-        <div className="mt-20 pt-10 border-t border-white/5">
-          <p className="text-zinc-600 text-xs uppercase tracking-widest mb-8 font-medium">
+        <div className="mt-12 pt-8 border-t border-white/5">
+          <p className="text-zinc-600 text-xs uppercase tracking-widest mb-6 font-medium">
             Previous Professional Experience At
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
             {/* VFS Global */}
-            <div className="group flex flex-col items-center hover:scale-105 transition-transform duration-300 cursor-default">
-              <span className="font-sans font-bold text-3xl md:text-4xl text-zinc-300 group-hover:text-white tracking-tight transition-colors">
-                VFS
-                <span className="font-light text-zinc-500 group-hover:text-bronze-400 transition-colors">
-                  GLOBAL
+            <div className="group flex items-center gap-3 opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300 cursor-default">
+              <span className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-blue-200/40 group-hover:border-blue-200/70 flex items-center justify-center transition-colors">
+                <span className="font-sans text-sm md:text-base italic text-blue-200/70 group-hover:text-blue-100 transition-colors">
+                  vfs.
                 </span>
               </span>
-              <span className="h-0.5 w-0 bg-bronze-500 group-hover:w-full transition-all duration-500 mt-2" />
+              <span className="font-sans font-semibold text-xl md:text-2xl tracking-wide text-blue-200/60 group-hover:text-blue-100 transition-colors">
+                VFS<span className="text-blue-200/40 group-hover:text-blue-200/70 transition-colors">.</span>GLOBAL
+              </span>
             </div>
 
             {/* TLScontact */}
-            <div className="group flex flex-col items-center hover:scale-105 transition-transform duration-300 cursor-default">
-              <span className="font-sans font-bold text-3xl md:text-4xl text-zinc-300 group-hover:text-white tracking-tighter transition-colors">
+            <div className="group flex items-center opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300 cursor-default">
+              <span className="font-sans font-bold text-2xl md:text-3xl text-blue-300/70 group-hover:text-blue-200 tracking-tight transition-colors">
                 TLS
-                <span className="text-zinc-500 group-hover:text-bronze-400 transition-colors">
-                  contact
-                </span>
               </span>
-              <span className="h-0.5 w-0 bg-bronze-500 group-hover:w-full transition-all duration-500 mt-2" />
+              <span className="font-sans font-normal text-2xl md:text-3xl text-orange-400/60 group-hover:text-orange-300 tracking-tight transition-colors">
+                contact
+              </span>
             </div>
           </div>
         </div>

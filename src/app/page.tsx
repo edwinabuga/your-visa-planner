@@ -171,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* Services — Where do you want to go? */}
-      <section className="py-24 bg-black relative">
+      <section className="py-24 bg-black relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-bronze-900/10 blur-[100px] pointer-events-none" />
 
         <div className="mx-auto max-w-6xl px-6 relative z-10">
