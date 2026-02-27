@@ -51,11 +51,11 @@ export default function CTASection({
             <span>WhatsApp: +254 796 544 253</span>
           </a>
           <a
-            href="mailto:edwin@yourvisaplanner.com"
+            href="mailto:edwinabuga@gmail.com"
             className="flex items-center gap-3 hover:text-white transition-colors"
           >
             <Mail className="w-5 h-5 text-bronze-500" />
-            <span>edwin@yourvisaplanner.com</span>
+            <span>edwinabuga@gmail.com</span>
           </a>
         </div>
       </div>

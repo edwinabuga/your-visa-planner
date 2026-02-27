@@ -105,10 +105,10 @@ export default function ContactPage() {
                       <p className="font-medium text-white">Email</p>
                       <p className="text-sm text-zinc-500">
                         <a
-                          href="mailto:edwin@yourvisaplanner.com"
+                          href="mailto:edwinabuga@gmail.com"
                           className="hover:text-bronze-400 transition-colors"
                         >
-                          edwin@yourvisaplanner.com
+                          edwinabuga@gmail.com
                         </a>
                       </p>
                     </div>

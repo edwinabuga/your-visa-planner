@@ -130,10 +130,10 @@ export default function PrivacyPage() {
               If you have any questions about this Privacy Policy or how we
               handle your data, please contact us at{" "}
               <a
-                href="mailto:edwin@yourvisaplanner.com"
+                href="mailto:edwinabuga@gmail.com"
                 className="text-bronze-400 hover:underline"
               >
-                edwin@yourvisaplanner.com
+                edwinabuga@gmail.com
               </a>
               .
             </p>
