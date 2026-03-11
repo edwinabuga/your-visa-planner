@@ -2,13 +2,16 @@ import Link from "next/link";
 
 const services = [
   { name: "UK Visitor Visas", href: "/services/uk-visitor" },
+  { name: "Other UK Visas", href: "/services/uk-other" },
   { name: "Schengen Visas", href: "/services/schengen" },
-  { name: "USA & Canada", href: "/services/custom" },
-  { name: "Refusal Rescue", href: "/services/uk-visitor" },
+  { name: "USA, UAE & Global", href: "/services/custom" },
+  { name: "Refusal Rescue", href: "/services/uk-visitor#refusal" },
 ];
 
 const company = [
   { name: "About", href: "/about" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "FAQ", href: "/#faq" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
   { name: "Privacy Policy", href: "/privacy" },
@@ -57,17 +60,24 @@ export default function Footer() {
             </h5>
             <ul className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
               <li>Nairobi, Kenya</li>
-              <li>Mon–Fri: 9AM – 6PM</li>
+              <li>Mon–Fri: 9AM – 6PM EAT</li>
               <li className="pt-2 text-bronze-500">
-                <a href="tel:+254796544253">+254 796 544 253</a>
+                <a href="tel:+254796544253" className="hover:text-bronze-400 transition-colors">
+                  +254 796 544 253
+                </a>
+              </li>
+              <li className="text-bronze-500">
+                <a href="mailto:edwinabuga@gmail.com" className="hover:text-bronze-400 transition-colors">
+                  edwinabuga@gmail.com
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-zinc-200 dark:border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-400 dark:text-zinc-600">
-          <p>&copy; 2026 Your Visa Planner. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
+          <p>&copy; {new Date().getFullYear()} Your Visa Planner. All rights reserved.</p>
+          <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
             {company.map((item) => (
               <Link
                 key={item.name}

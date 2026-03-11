@@ -2,15 +2,42 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, Plane } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const navigation = [
   { name: "Services", href: "/services" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "FAQ", href: "/#faq" },
   { name: "About", href: "/about" },
   { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
+
+// Distinctive passport-stamp logo mark
+function LogoMark() {
+  return (
+    <div className="p-2 border border-bronze-500/30 rounded-sm group-hover:border-bronze-400/60 transition-colors">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        className="text-bronze-400"
+        aria-hidden="true"
+      >
+        {/* Passport book body */}
+        <rect x="3.5" y="1.5" width="13" height="17" rx="1.5" stroke="currentColor" strokeWidth="1.4" />
+        {/* Spine / binding */}
+        <line x1="6.5" y1="1.5" x2="6.5" y2="18.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        {/* Approval stamp circle (dashed) */}
+        <circle cx="12" cy="10" r="3.8" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 1.2" />
+        {/* Check mark inside */}
+        <path d="M10.3 10.2l1.2 1.2 2.2-2.4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
+  );
+}
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,9 +61,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="p-2 border border-bronze-500/30 rounded-sm group-hover:border-bronze-400/60 transition-colors">
-              <Plane className="w-5 h-5 text-bronze-400" />
-            </div>
+            <LogoMark />
             <span className="font-heading text-xl font-bold tracking-tight text-bronze-800 dark:text-bronze-100">
               Your Visa Planner
             </span>
@@ -77,24 +102,38 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 bg-white dark:bg-zinc-950 flex flex-col">
-          <div className="flex items-center justify-between p-6">
-            <ThemeToggle />
-            <button
-              type="button"
-              className="p-2 text-bronze-700 dark:text-bronze-200"
+          {/* Mobile header row: logo + controls */}
+          <div className="flex items-center justify-between px-6 py-5 border-b border-zinc-100 dark:border-zinc-900">
+            <Link
+              href="/"
+              className="flex items-center gap-2 group"
               onClick={() => setMobileMenuOpen(false)}
-              aria-label="Close menu"
             >
-              <X size={28} />
-            </button>
+              <LogoMark />
+              <span className="font-heading text-lg font-bold tracking-tight text-bronze-800 dark:text-bronze-100">
+                Your Visa Planner
+              </span>
+            </Link>
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              <button
+                type="button"
+                className="p-2 text-bronze-700 dark:text-bronze-200"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X size={24} />
+              </button>
+            </div>
           </div>
 
-          <div className="flex flex-col px-8 pt-8 gap-6">
+          {/* Nav links */}
+          <div className="flex flex-col px-8 pt-8 gap-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg font-heading text-zinc-700 dark:text-zinc-300 hover:text-bronze-600 dark:hover:text-bronze-400 transition-colors"
+                className="py-3 text-lg font-heading text-zinc-700 dark:text-zinc-300 hover:text-bronze-600 dark:hover:text-bronze-400 border-b border-zinc-100 dark:border-zinc-900 last:border-b-0 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -102,10 +141,10 @@ export default function Header() {
             ))}
           </div>
 
-          <div className="px-8 mt-10">
+          <div className="px-8 mt-auto mb-10">
             <Link
               href="/eligibility"
-              className="block rounded-full bg-gradient-to-r from-bronze-600 to-bronze-400 px-8 py-4 text-center text-sm font-medium uppercase tracking-wide text-white"
+              className="block rounded-full bg-gradient-to-r from-bronze-600 to-bronze-400 px-8 py-4 text-center text-sm font-medium uppercase tracking-wide text-white hover:from-bronze-500 hover:to-bronze-300 transition-all"
               onClick={() => setMobileMenuOpen(false)}
             >
               Free Assessment

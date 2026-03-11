@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import CTASection from "@/components/CTASection";
+import FAQ from "@/components/FAQ";
 import Link from "next/link";
 import {
   ShieldCheck,
@@ -254,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* Pricing — UK Visitor Visa Packages */}
-      <section className="py-24 overflow-hidden">
+      <section id="pricing" className="py-24 overflow-hidden">
         <div className="mx-auto max-w-6xl px-6">
           <FadeIn className="text-center mb-16">
             <h2 className="text-bronze-400 text-sm font-sans uppercase tracking-widest mb-4">
@@ -516,6 +517,9 @@ export default function Home() {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* FAQ */}
+      <FAQ />
 
       {/* Contact / CTA */}
       <CTASection />

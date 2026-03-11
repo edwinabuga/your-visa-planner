@@ -1,211 +1,279 @@
+import React from "react";
 import Link from "next/link";
-import { Check, X } from "lucide-react";
+import { Check, Minus } from "lucide-react";
 
 const features = [
-  "Application Form Filling",
-  "Tailored Checklist",
-  "Cover Letter & Itinerary",
-  "Follow-up Call",
-  "Ongoing Support",
-  "VFS Briefing",
-  "Refusal Analysis",
+  { label: "Application Form Filling", note: null },
+  { label: "Tailored Document Checklist", note: null },
+  { label: "Cover Letter & Itinerary", note: null },
+  { label: "Follow-up Consultation Call", note: null },
+  { label: "Ongoing WhatsApp Support", note: null },
+  { label: "VFS Pre-appointment Briefing", note: null },
+  { label: "Refusal Letter Analysis", note: "In-depth for Complex" },
 ];
 
 const tiers = [
   {
-    name: "Form Filling Only",
+    name: "Form Filling",
+    tagline: "You have your documents.",
     price: "KES 12,000",
-    href: "/contact",
+    href: "/eligibility",
+    featured: false,
     included: [true, false, false, false, false, false, false],
   },
   {
-    name: "Full Application Support",
+    name: "Full Support",
+    tagline: "End-to-end guidance.",
     price: "KES 20,000",
-    href: "/contact",
+    href: "/eligibility",
     featured: true,
     included: [true, true, true, true, true, true, false],
   },
   {
     name: "Reapplication (Standard)",
+    tagline: "One prior refusal.",
     price: "KES 20,000",
-    href: "/contact",
+    href: "/eligibility",
+    featured: false,
     included: [true, true, true, true, true, true, true],
   },
   {
     name: "Reapplication (Complex)",
+    tagline: "Multiple refusals.",
     price: "KES 30,000",
-    href: "/contact",
+    href: "/eligibility",
+    featured: false,
     included: [true, true, true, true, true, true, true],
-    note: "In-depth",
   },
 ];
 
 export default function CompareServicesTable() {
   return (
-    <section className="py-20 px-4 bg-zinc-50 dark:bg-black">
-      <div className="mx-auto max-w-5xl">
-        <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-3">
-          Packages
-        </p>
-        <h2 className="font-heading text-4xl sm:text-5xl text-zinc-900 dark:text-white mb-4">
-          Compare Services
-        </h2>
-        <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-12 max-w-2xl">
-          Choose the level of support that fits your needs. All packages include expert guidance for your UK Visitor Visa application.
-        </p>
+    <section className="py-24 px-4 border-t border-zinc-200 dark:border-white/5">
+      <div className="mx-auto max-w-6xl">
+        {/* Section header */}
+        <div className="mb-14">
+          <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-3">
+            Packages
+          </p>
+          <h2 className="font-heading text-4xl sm:text-5xl text-zinc-900 dark:text-white mb-4">
+            Compare Services
+          </h2>
+          <p className="text-zinc-500 dark:text-zinc-400 max-w-xl">
+            All packages start with a free eligibility assessment. UK Visitor
+            Visa pricing shown — other visa types quoted on request.
+          </p>
+        </div>
 
         {/* Desktop table */}
-        <div className="hidden md:block overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b-2 border-zinc-200 dark:border-zinc-800">
-                <th className="text-left py-6 pr-8 text-sm font-medium text-zinc-500 dark:text-zinc-500 uppercase tracking-wider w-1/3">
-                  Feature
-                </th>
-                {tiers.map((tier, idx) => (
-                  <th key={tier.name} className="text-center py-6 px-4 relative">
-                    {tier.featured && (
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2">
-                        <span className="bg-bronze-500 text-white text-xs uppercase font-bold px-3 py-1 rounded-full whitespace-nowrap">
-                          ⭐ Most Popular
-                        </span>
-                      </div>
-                    )}
-                    <div className="font-heading text-xl text-zinc-900 dark:text-white mb-2">
-                      {tier.name}
-                    </div>
-                    <div className="text-base text-bronze-400 font-semibold">
-                      {tier.price}
-                    </div>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {features.map((feature, i) => (
-                <tr key={feature} className="border-b border-zinc-100 dark:border-zinc-900 hover:bg-zinc-100/50 dark:hover:bg-zinc-900/50 transition-colors">
-                  <td className="py-5 pr-8 text-sm text-zinc-700 dark:text-zinc-300">
-                    {feature}
-                  </td>
-                  {tiers.map((tier) => (
-                    <td key={tier.name} className="text-center py-5 px-4">
-                      {tier.included[i] ? (
-                        <div className="flex flex-col items-center gap-1">
-                          <Check
-                            size={20}
-                            className="inline-block text-bronze-500"
-                            strokeWidth={2.5}
-                          />
-                          {tier.note && i === features.length - 1 && (
-                            <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                              ({tier.note})
-                            </span>
-                          )}
-                        </div>
-                      ) : (
-                        <X
-                          size={20}
-                          className="inline-block text-zinc-300 dark:text-zinc-700"
-                          strokeWidth={2}
-                        />
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
-              {/* CTA Row */}
-              <tr>
-                <td className="pt-8"></td>
+        <div className="hidden md:block">
+          <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] rounded-lg overflow-hidden border border-zinc-200 dark:border-zinc-800">
+
+            {/* Header row */}
+            <div className="bg-zinc-50 dark:bg-zinc-900/50 px-6 py-5 flex items-end">
+              <span className="text-xs uppercase tracking-widest text-zinc-400 font-medium">
+                Feature
+              </span>
+            </div>
+            {tiers.map((tier) => (
+              <div
+                key={tier.name}
+                className={`px-5 py-5 flex flex-col justify-between border-l border-zinc-200 dark:border-zinc-800 ${
+                  tier.featured
+                    ? "bg-bronze-50 dark:bg-bronze-950/30"
+                    : "bg-zinc-50 dark:bg-zinc-900/50"
+                }`}
+              >
+                <div>
+                  {tier.featured && (
+                    <span className="inline-block mb-2 text-xs font-bold uppercase tracking-wide bg-bronze-500 text-white px-2 py-0.5 rounded-sm">
+                      Most Popular
+                    </span>
+                  )}
+                  <p
+                    className={`font-heading text-base leading-tight mb-1 ${
+                      tier.featured
+                        ? "text-bronze-800 dark:text-bronze-100"
+                        : "text-zinc-900 dark:text-white"
+                    }`}
+                  >
+                    {tier.name}
+                  </p>
+                  <p className="text-xs text-zinc-400 dark:text-zinc-500 mb-3">
+                    {tier.tagline}
+                  </p>
+                  <p
+                    className={`font-heading text-xl font-semibold ${
+                      tier.featured
+                        ? "text-bronze-600 dark:text-bronze-300"
+                        : "text-zinc-900 dark:text-white"
+                    }`}
+                  >
+                    {tier.price}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            {/* Feature rows */}
+            {features.map((feature, i) => (
+              <React.Fragment key={i}>
+                <div
+                  className={`px-6 py-4 text-sm text-zinc-700 dark:text-zinc-300 border-t border-zinc-200 dark:border-zinc-800 flex items-center ${
+                    i % 2 === 0 ? "" : "bg-zinc-50/50 dark:bg-zinc-900/20"
+                  }`}
+                >
+                  {feature.label}
+                </div>
                 {tiers.map((tier) => (
-                  <td key={tier.name} className="text-center pt-8 px-4">
-                    <Link
-                      href={tier.href}
-                      className={`inline-block px-6 py-2.5 text-sm font-medium transition-all ${
-                        tier.featured
-                          ? "bg-bronze-500 text-zinc-950 hover:bg-bronze-400"
-                          : "border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:border-bronze-500 dark:hover:border-bronze-500 hover:text-bronze-500 dark:hover:text-bronze-400"
-                      }`}
-                    >
-                      Get Started
-                    </Link>
-                  </td>
+                  <div
+                    key={`${tier.name}-${i}`}
+                    className={`px-5 py-4 flex items-center justify-center border-t border-l border-zinc-200 dark:border-zinc-800 ${
+                      tier.featured
+                        ? "bg-bronze-50 dark:bg-bronze-950/20"
+                        : i % 2 !== 0
+                        ? "bg-zinc-50/50 dark:bg-zinc-900/20"
+                        : ""
+                    }`}
+                  >
+                    {tier.included[i] ? (
+                      <Check
+                        size={18}
+                        className={
+                          tier.featured
+                            ? "text-bronze-500"
+                            : "text-bronze-400 dark:text-bronze-500"
+                        }
+                        strokeWidth={2.5}
+                      />
+                    ) : (
+                      <Minus
+                        size={16}
+                        className="text-zinc-300 dark:text-zinc-700"
+                        strokeWidth={1.5}
+                      />
+                    )}
+                  </div>
                 ))}
-              </tr>
-            </tbody>
-          </table>
+              </React.Fragment>
+            ))}
+
+            {/* CTA row */}
+            <div className="px-6 py-5 border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50" />
+            {tiers.map((tier) => (
+              <div
+                key={`cta-${tier.name}`}
+                className={`px-4 py-5 border-t border-l border-zinc-200 dark:border-zinc-800 ${
+                  tier.featured
+                    ? "bg-bronze-50 dark:bg-bronze-950/20"
+                    : "bg-zinc-50 dark:bg-zinc-900/50"
+                }`}
+              >
+                <Link
+                  href={tier.href}
+                  className={`block w-full text-center py-2.5 text-xs font-medium uppercase tracking-wide rounded-sm transition-all ${
+                    tier.featured
+                      ? "bg-bronze-500 text-white hover:bg-bronze-400"
+                      : "border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:border-bronze-400 hover:text-bronze-600 dark:hover:border-bronze-500 dark:hover:text-bronze-400"
+                  }`}
+                >
+                  Get Started
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {/* Footnote */}
+          <p className="mt-5 text-xs text-zinc-400 dark:text-zinc-600">
+            * All packages require a KES 5,000 non-refundable consultation
+            deposit, credited toward the total if you proceed. Group discounts
+            available.
+          </p>
         </div>
 
         {/* Mobile cards */}
-        <div className="md:hidden space-y-6">
-          {tiers.map((tier, idx) => (
+        <div className="md:hidden space-y-4">
+          {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`border ${
+              className={`rounded-lg border overflow-hidden ${
                 tier.featured
-                  ? "border-bronze-500/30 dark:border-bronze-500/30 bg-zinc-100 dark:bg-zinc-900"
-                  : "border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950"
-              } p-6 rounded-lg relative`}
+                  ? "border-bronze-400/50 dark:border-bronze-700/50"
+                  : "border-zinc-200 dark:border-zinc-800"
+              }`}
             >
-              {tier.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="bg-bronze-500 text-white text-xs uppercase font-bold px-3 py-1 rounded-full">
-                    ⭐ Most Popular
+              {/* Card header */}
+              <div
+                className={`px-5 py-5 ${
+                  tier.featured
+                    ? "bg-bronze-50 dark:bg-bronze-950/30"
+                    : "bg-zinc-50 dark:bg-zinc-900/40"
+                }`}
+              >
+                {tier.featured && (
+                  <span className="inline-block mb-2 text-xs font-bold uppercase tracking-wide bg-bronze-500 text-white px-2 py-0.5 rounded-sm">
+                    Most Popular
                   </span>
+                )}
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-heading text-xl text-zinc-900 dark:text-white leading-tight">
+                      {tier.name}
+                    </p>
+                    <p className="text-sm text-zinc-400 dark:text-zinc-500 mt-0.5">
+                      {tier.tagline}
+                    </p>
+                  </div>
+                  <p className="font-heading text-xl text-bronze-600 dark:text-bronze-300 whitespace-nowrap">
+                    {tier.price}
+                  </p>
                 </div>
-              )}
-              <div className="font-heading text-2xl text-zinc-900 dark:text-white mb-1">
-                {tier.name}
               </div>
-              <div className="text-base text-bronze-400 font-semibold mb-6">
-                {tier.price}
-              </div>
-              <ul className="space-y-3 mb-6">
+
+              {/* Feature list */}
+              <div className="px-5 py-4 bg-white dark:bg-zinc-950 space-y-3">
                 {features.map((feature, i) => (
-                  <li
-                    key={feature}
-                    className="flex items-center gap-3 text-sm"
-                  >
+                  <div key={feature.label} className="flex items-center gap-3">
                     {tier.included[i] ? (
                       <>
                         <Check
-                          size={18}
+                          size={16}
                           className="text-bronze-500 shrink-0"
                           strokeWidth={2.5}
                         />
-                        <span className="text-zinc-700 dark:text-zinc-300">
-                          {feature}
-                          {tier.note && i === features.length - 1 && (
-                            <span className="text-xs text-zinc-500 dark:text-zinc-400 ml-1">
-                              ({tier.note})
-                            </span>
-                          )}
+                        <span className="text-sm text-zinc-700 dark:text-zinc-300">
+                          {feature.label}
                         </span>
                       </>
                     ) : (
                       <>
-                        <X
-                          size={18}
+                        <Minus
+                          size={16}
                           className="text-zinc-300 dark:text-zinc-700 shrink-0"
-                          strokeWidth={2}
+                          strokeWidth={1.5}
                         />
-                        <span className="text-zinc-400 dark:text-zinc-600">
-                          {feature}
+                        <span className="text-sm text-zinc-400 dark:text-zinc-600">
+                          {feature.label}
                         </span>
                       </>
                     )}
-                  </li>
+                  </div>
                 ))}
-              </ul>
-              <Link
-                href={tier.href}
-                className={`block w-full text-center px-6 py-3 text-sm font-medium transition-all ${
-                  tier.featured
-                    ? "bg-bronze-500 text-zinc-950 hover:bg-bronze-400"
-                    : "border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 hover:border-bronze-500 dark:hover:border-bronze-500 hover:text-bronze-500 dark:hover:text-bronze-400"
-                }`}
-              >
-                Get Started
-              </Link>
+              </div>
+
+              {/* CTA */}
+              <div className="px-5 pb-5 bg-white dark:bg-zinc-950">
+                <Link
+                  href={tier.href}
+                  className={`block w-full text-center py-3 text-sm font-medium uppercase tracking-wide rounded-sm transition-all ${
+                    tier.featured
+                      ? "bg-bronze-500 text-white hover:bg-bronze-400"
+                      : "border border-zinc-300 dark:border-zinc-700 text-zinc-600 dark:text-zinc-400 hover:border-bronze-400 hover:text-bronze-600 dark:hover:border-bronze-500 dark:hover:text-bronze-400"
+                  }`}
+                >
+                  Get Started
+                </Link>
+              </div>
             </div>
           ))}
         </div>
