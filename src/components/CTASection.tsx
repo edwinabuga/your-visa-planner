@@ -12,21 +12,21 @@ export default function CTASection({
   description = "Begin with a free eligibility assessment. We review your details and send you a personalized PDF report within 2 hours during business days.",
 }: CTASectionProps) {
   return (
-    <section className="py-24 relative bg-zinc-900">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-zinc-900 to-black opacity-90" />
+    <section className="py-24 relative bg-stone-100 dark:bg-zinc-900">
+      <div className="absolute inset-0 bg-gradient-to-b from-stone-50 via-stone-100 to-stone-50 dark:from-black dark:via-zinc-900 dark:to-black opacity-90" />
 
       <div className="mx-auto max-w-3xl px-6 relative z-10 text-center">
-        <h2 className="font-heading text-4xl md:text-5xl text-white mb-6">
+        <h2 className="font-heading text-4xl md:text-5xl text-zinc-900 dark:text-white mb-6">
           {title}
         </h2>
-        <p className="text-zinc-400 text-lg mb-10 leading-relaxed">
+        <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-10 leading-relaxed">
           {description}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Link
             href="/eligibility"
-            className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide uppercase rounded-full bg-gradient-to-r from-bronze-600 to-bronze-400 text-white hover:from-bronze-500 hover:to-bronze-300 shadow-[0_0_15px_rgba(180,102,70,0.3)] hover:shadow-[0_0_25px_rgba(206,155,119,0.5)] transition-all duration-300"
+            className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium tracking-wide uppercase rounded-full bg-gradient-to-r from-bronze-600 to-bronze-400 text-white hover:from-bronze-500 hover:to-bronze-300 hover:scale-105 shadow-[0_0_15px_rgba(180,102,70,0.3)] hover:shadow-[0_0_25px_rgba(206,155,119,0.5)] transition-all duration-300"
           >
             Free Assessment <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
@@ -34,25 +34,25 @@ export default function CTASection({
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium tracking-wide uppercase rounded-full border border-bronze-500 text-bronze-200 hover:bg-bronze-900/30 hover:text-white hover:border-bronze-300 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium tracking-wide uppercase rounded-full border border-bronze-500 text-bronze-700 dark:text-bronze-200 hover:bg-bronze-100 dark:hover:bg-bronze-900/30 hover:text-bronze-900 dark:hover:text-white hover:border-bronze-400 dark:hover:border-bronze-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(206,155,119,0.2)] transition-all duration-300"
           >
             <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
           </a>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-8 text-zinc-400">
+        <div className="flex flex-col md:flex-row justify-center gap-8 text-zinc-600 dark:text-zinc-400">
           <a
             href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 hover:text-white transition-colors"
+            className="flex items-center gap-3 hover:text-zinc-900 dark:hover:text-white transition-colors"
           >
             <MessageCircle className="w-5 h-5 text-bronze-500" />
             <span>WhatsApp: +254 796 544 253</span>
           </a>
           <a
             href="mailto:edwinabuga@gmail.com"
-            className="flex items-center gap-3 hover:text-white transition-colors"
+            className="flex items-center gap-3 hover:text-zinc-900 dark:hover:text-white transition-colors"
           >
             <Mail className="w-5 h-5 text-bronze-500" />
             <span>edwinabuga@gmail.com</span>

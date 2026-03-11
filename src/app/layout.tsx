@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -55,15 +56,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <JsonLd />
       </head>
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <ThemeProvider>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+        </ThemeProvider>
       </body>
     </html>
   );

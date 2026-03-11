@@ -66,10 +66,10 @@ export default function UKOtherVisasPage() {
           >
             &larr; All Services
           </Link>
-          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-zinc-900 dark:text-white leading-[1.1]">
             Other UK Visas
           </h1>
-          <p className="mt-6 text-lg text-zinc-400 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
             Beyond the Standard Visitor visa, the UK offers many immigration
             routes for work, study, family, and more. Each case is different, so
             we provide custom pricing tailored to the complexity of your
@@ -86,14 +86,14 @@ export default function UKOtherVisasPage() {
               return (
                 <div
                   key={visa.title}
-                  className="border border-zinc-800 p-8 hover:border-bronze-800/50 transition-all"
+                  className="border border-zinc-200 dark:border-zinc-800 p-8 hover:border-bronze-300/50 dark:hover:border-bronze-800/50 transition-all"
                 >
                   <Icon
                     size={28}
                     className="text-bronze-500 mb-4"
                     strokeWidth={1.5}
                   />
-                  <h3 className="font-heading text-lg text-white mb-2">
+                  <h3 className="font-heading text-lg text-zinc-900 dark:text-white mb-2">
                     {visa.title}
                   </h3>
                   <p className="text-sm text-zinc-500 leading-relaxed mb-4">
@@ -110,8 +110,8 @@ export default function UKOtherVisasPage() {
             })}
           </div>
 
-          <div className="mt-14 border border-zinc-800 p-10 text-center">
-            <h2 className="font-heading text-2xl text-white mb-4">
+          <div className="mt-14 border border-zinc-200 dark:border-zinc-800 p-10 text-center">
+            <h2 className="font-heading text-2xl text-zinc-900 dark:text-white mb-4">
               Pricing Varies by Case
             </h2>
             <p className="text-zinc-500 mb-8 max-w-xl mx-auto leading-relaxed">

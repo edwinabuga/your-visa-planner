@@ -75,10 +75,10 @@ export default function CustomVisaPage() {
           >
             &larr; All Services
           </Link>
-          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-zinc-900 dark:text-white leading-[1.1]">
             US, UAE &amp; Other Destinations
           </h1>
-          <p className="mt-6 text-lg text-zinc-400 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
             For destinations beyond the UK and Schengen, we offer tailored
             documentation and application support packages. Each case is unique,
             so we provide personalised quotes based on your specific needs.
@@ -94,17 +94,17 @@ export default function CustomVisaPage() {
               return (
                 <div
                   key={dest.title}
-                  className="border border-zinc-800 p-8 hover:border-bronze-800/50 transition-all"
+                  className="border border-zinc-200 dark:border-zinc-800 p-8 hover:border-bronze-300/50 dark:hover:border-bronze-800/50 transition-all"
                 >
                   <Icon size={28} className="text-bronze-500 mb-4" strokeWidth={1.5} />
-                  <h3 className="font-heading text-lg text-white mb-2">
+                  <h3 className="font-heading text-lg text-zinc-900 dark:text-white mb-2">
                     {dest.title}
                   </h3>
-                  <p className="text-sm text-zinc-500 leading-relaxed mb-4">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
                     {dest.description}
                   </p>
                   {dest.note && (
-                    <span className="inline-block text-xs font-medium text-bronze-400 bg-bronze-950/50 rounded-full px-3 py-1">
+                    <span className="inline-block text-xs font-medium text-bronze-400 bg-bronze-50/50 dark:bg-bronze-950/50 rounded-full px-3 py-1">
                       {dest.note}
                     </span>
                   )}
@@ -115,13 +115,13 @@ export default function CustomVisaPage() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-zinc-900/30">
+      <section className="py-20 px-4 bg-stone-100/60 dark:bg-zinc-900/30">
         <div className="mx-auto max-w-6xl">
           <div className="text-center mb-14">
-            <h2 className="font-heading text-3xl sm:text-4xl text-white">
+            <h2 className="font-heading text-3xl sm:text-4xl text-zinc-900 dark:text-white">
               How Our Custom Packages Work
             </h2>
-            <p className="mt-4 text-lg text-zinc-500 max-w-xl mx-auto">
+            <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto">
               A straightforward process tailored to your destination and
               circumstances.
             </p>
@@ -131,16 +131,16 @@ export default function CustomVisaPage() {
               const Icon = step.icon;
               return (
                 <div key={step.title} className="text-center">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-bronze-950/50 border border-bronze-500/30 mb-5">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-bronze-50/50 dark:bg-bronze-950/50 border border-bronze-500/30 mb-5">
                     <Icon size={24} className="text-bronze-400" strokeWidth={1.5} />
                   </div>
                   <span className="block font-heading text-sm font-medium text-bronze-400 mb-2">
                     Step {step.number}
                   </span>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-zinc-500 leading-relaxed">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -152,7 +152,7 @@ export default function CustomVisaPage() {
 
       <section className="py-16 px-4">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-zinc-500 leading-relaxed">
+          <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
             All custom packages include a consultation call, a personalised
             document checklist, and a thorough review of your application
             materials. We make sure everything is in order before you submit.

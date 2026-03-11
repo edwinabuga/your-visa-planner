@@ -19,10 +19,10 @@ export default function BlogPage() {
           <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-4">
             Insights
           </p>
-          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-zinc-900 dark:text-white leading-[1.1]">
             Blog
           </h1>
-          <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
             Helpful guides, tips, and the latest news about visa applications
             from Kenya. Stay informed and prepared.
           </p>
@@ -33,7 +33,7 @@ export default function BlogPage() {
         <div className="mx-auto max-w-6xl">
           {posts.length === 0 ? (
             <div className="text-center py-12">
-              <p className="text-zinc-500">
+              <p className="text-zinc-600 dark:text-zinc-400">
                 No blog posts yet. Check back soon!
               </p>
             </div>
@@ -43,15 +43,15 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group block border border-zinc-800 overflow-hidden hover:border-bronze-800/50 transition-all"
+                  className="group block border border-zinc-200 dark:border-zinc-800 overflow-hidden hover:border-bronze-300/50 dark:hover:border-bronze-800/50 transition-all"
                 >
-                  <div className="bg-gradient-to-br from-bronze-900/30 to-black h-40 flex items-center justify-center p-6">
-                    <h3 className="text-white font-heading text-lg text-center leading-tight">
+                  <div className="bg-gradient-to-br from-bronze-200/30 dark:from-bronze-900/30 to-stone-100 dark:to-black h-40 flex items-center justify-center p-6">
+                    <h3 className="text-zinc-900 dark:text-white font-heading text-lg text-center leading-tight">
                       {post.title}
                     </h3>
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-2 text-sm text-zinc-500 mb-3">
+                    <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 mb-3">
                       <Calendar size={14} />
                       <time>
                         {new Date(post.date).toLocaleDateString("en-GB", {
@@ -61,7 +61,7 @@ export default function BlogPage() {
                         })}
                       </time>
                     </div>
-                    <p className="text-sm text-zinc-500 leading-relaxed mb-4">
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
                       {post.description}
                     </p>
                     <span className="inline-flex items-center gap-1 text-sm font-medium text-bronze-400 group-hover:gap-2 transition-all">

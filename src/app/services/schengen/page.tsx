@@ -20,10 +20,10 @@ export default function SchengenVisaPage() {
           >
             &larr; All Services
           </Link>
-          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-zinc-900 dark:text-white leading-[1.1]">
             Schengen Visa
           </h1>
-          <p className="mt-6 text-lg text-zinc-400 max-w-2xl leading-relaxed">
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
             Travel to Europe with confidence. We handle your Schengen visa
             application from start to finish, covering tourism, business,
             family visits, and medical treatment across 26 European countries.
@@ -36,10 +36,10 @@ export default function SchengenVisaPage() {
           <div className="grid lg:grid-cols-3 gap-14">
             <div className="lg:col-span-2 space-y-14">
               <div>
-                <h2 className="font-heading text-2xl text-white mb-4">
+                <h2 className="font-heading text-2xl text-zinc-900 dark:text-white mb-4">
                   What Is a Schengen Visa?
                 </h2>
-                <p className="text-zinc-400 leading-relaxed">
+                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   A Schengen visa is a short-stay visa that allows you to travel
                   to 26 European countries within the Schengen Area. With a
                   single visa, you can visit countries like France, Germany,
@@ -49,7 +49,7 @@ export default function SchengenVisaPage() {
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl text-white mb-5">
+                <h2 className="font-heading text-2xl text-zinc-900 dark:text-white mb-5">
                   Types We Handle
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -59,17 +59,17 @@ export default function SchengenVisaPage() {
                     { title: "Family Visits", desc: "Visit family members or friends living in a Schengen country." },
                     { title: "Medical Treatment", desc: "Travel for medical consultations or procedures in Europe." },
                   ].map((type) => (
-                    <div key={type.title} className="border border-zinc-800 p-5">
+                    <div key={type.title} className="border border-zinc-200 dark:border-zinc-800 p-5">
                       <Globe size={20} className="text-bronze-500 mb-3" strokeWidth={1.5} />
-                      <h3 className="font-semibold text-white text-sm mb-1">{type.title}</h3>
-                      <p className="text-sm text-zinc-500 leading-relaxed">{type.desc}</p>
+                      <h3 className="font-semibold text-zinc-900 dark:text-white text-sm mb-1">{type.title}</h3>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{type.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl text-white mb-5">
+                <h2 className="font-heading text-2xl text-zinc-900 dark:text-white mb-5">
                   Key Requirements
                 </h2>
                 <ul className="space-y-3">
@@ -84,17 +84,17 @@ export default function SchengenVisaPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle size={18} className="text-bronze-500 shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-zinc-400">{item}</span>
+                      <span className="text-zinc-600 dark:text-zinc-400">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl text-white mb-5">
+                <h2 className="font-heading text-2xl text-zinc-900 dark:text-white mb-5">
                   How We Help
                 </h2>
-                <p className="text-zinc-400 leading-relaxed mb-4">
+                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
                   Our experienced consultants will:
                 </p>
                 <ul className="space-y-3">
@@ -107,14 +107,14 @@ export default function SchengenVisaPage() {
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <CheckCircle size={18} className="text-bronze-500 shrink-0 mt-0.5" strokeWidth={1.5} />
-                      <span className="text-zinc-400">{item}</span>
+                      <span className="text-zinc-600 dark:text-zinc-400">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h2 className="font-heading text-2xl text-white mb-5">
+                <h2 className="font-heading text-2xl text-zinc-900 dark:text-white mb-5">
                   Common Questions
                 </h2>
                 <div className="space-y-4">
@@ -132,9 +132,9 @@ export default function SchengenVisaPage() {
                       a: "Yes. A Schengen visa allows you to travel freely across all 26 Schengen countries during your approved stay.",
                     },
                   ].map((faq) => (
-                    <div key={faq.q} className="border border-zinc-800 border-l-4 border-l-bronze-500/30 p-6">
-                      <h3 className="font-semibold text-white mb-2">{faq.q}</h3>
-                      <p className="text-sm text-zinc-500 leading-relaxed">{faq.a}</p>
+                    <div key={faq.q} className="border border-zinc-200 dark:border-zinc-800 border-l-4 border-l-bronze-500/30 p-6">
+                      <h3 className="font-semibold text-zinc-900 dark:text-white mb-2">{faq.q}</h3>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{faq.a}</p>
                     </div>
                   ))}
                 </div>
@@ -142,38 +142,38 @@ export default function SchengenVisaPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="border border-zinc-800 p-8">
-                <h3 className="font-semibold text-white mb-5">Quick Facts</h3>
+              <div className="border border-zinc-200 dark:border-zinc-800 p-8">
+                <h3 className="font-semibold text-zinc-900 dark:text-white mb-5">Quick Facts</h3>
                 <ul className="space-y-5 text-sm">
                   <li className="flex items-start gap-3">
                     <Clock size={18} className="text-bronze-500 shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-white">Duration</p>
-                      <p className="text-zinc-500">Up to 90 days</p>
+                      <p className="font-medium text-zinc-900 dark:text-white">Duration</p>
+                      <p className="text-zinc-600 dark:text-zinc-400">Up to 90 days</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <FileText size={18} className="text-bronze-500 shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-white">Processing Time</p>
-                      <p className="text-zinc-500">~15 working days</p>
+                      <p className="font-medium text-zinc-900 dark:text-white">Processing Time</p>
+                      <p className="text-zinc-600 dark:text-zinc-400">~15 working days</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <AlertCircle size={18} className="text-bronze-500 shrink-0 mt-0.5" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-white">Validity</p>
-                      <p className="text-zinc-500">Single or multiple entry</p>
+                      <p className="font-medium text-zinc-900 dark:text-white">Validity</p>
+                      <p className="text-zinc-600 dark:text-zinc-400">Single or multiple entry</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-zinc-900 p-8 text-white">
-                <h3 className="font-heading text-xl mb-3">
+              <div className="bg-stone-100 dark:bg-zinc-900 p-8">
+                <h3 className="font-heading text-xl text-zinc-900 dark:text-white mb-3">
                   Ready to Apply?
                 </h3>
-                <p className="text-sm text-zinc-400 mb-6 leading-relaxed">
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-6 leading-relaxed">
                   Start with our free eligibility check to see if a Schengen
                   visa is right for your European travel plans.
                 </p>

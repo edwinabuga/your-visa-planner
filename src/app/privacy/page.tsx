@@ -11,10 +11,10 @@ export default function PrivacyPage() {
     <>
       <section className="py-20 sm:py-28 px-4 pt-32">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-zinc-900 dark:text-white leading-[1.1]">
             Privacy Policy
           </h1>
-          <p className="mt-6 text-lg text-zinc-400">
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400">
             Last updated: February 2026
           </p>
         </div>
@@ -23,8 +23,8 @@ export default function PrivacyPage() {
       <section className="py-16 px-4">
         <div className="mx-auto max-w-3xl space-y-10">
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Introduction</h2>
-            <p className="text-zinc-400 leading-relaxed">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Introduction</h2>
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               Your Visa Planner (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;)
               is committed to protecting your personal information. This Privacy
               Policy explains how we collect, use, and safeguard your data when
@@ -33,27 +33,27 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
               Information We Collect
             </h2>
-            <p className="text-zinc-400 leading-relaxed mb-4">
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
               We may collect the following types of information:
             </p>
-            <ul className="text-zinc-400 space-y-2 list-disc pl-5">
+            <ul className="text-zinc-600 dark:text-zinc-400 space-y-2 list-disc pl-5">
               <li>
-                <strong className="text-zinc-200">Personal details:</strong>{" "}
+                <strong className="text-zinc-800 dark:text-zinc-200">Personal details:</strong>{" "}
                 Name, email address, phone number, and other contact information
                 you provide through our forms.
               </li>
               <li>
-                <strong className="text-zinc-200">
+                <strong className="text-zinc-800 dark:text-zinc-200">
                   Visa-related information:
                 </strong>{" "}
                 Nationality, travel history, employment details, and other
                 information relevant to your visa application.
               </li>
               <li>
-                <strong className="text-zinc-200">Technical data:</strong> IP
+                <strong className="text-zinc-800 dark:text-zinc-200">Technical data:</strong> IP
                 address, browser type, and device information collected
                 automatically when you visit our website.
               </li>
@@ -61,10 +61,10 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
               How We Use Your Information
             </h2>
-            <ul className="text-zinc-400 space-y-2 list-disc pl-5">
+            <ul className="text-zinc-600 dark:text-zinc-400 space-y-2 list-disc pl-5">
               <li>
                 To provide visa consultancy services and respond to your
                 enquiries
@@ -79,10 +79,10 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
               Data Sharing
             </h2>
-            <p className="text-zinc-400 leading-relaxed">
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               We do not sell or rent your personal information to third parties.
               We may share your data only with your explicit consent, to comply
               with legal obligations, or with trusted service providers who
@@ -92,10 +92,10 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">
               Data Security
             </h2>
-            <p className="text-zinc-400 leading-relaxed">
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               We take reasonable measures to protect your personal information
               from unauthorised access, alteration, disclosure, or destruction.
               Our website uses SSL encryption to protect data transmitted online.
@@ -103,11 +103,11 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Your Rights</h2>
-            <p className="text-zinc-400 leading-relaxed mb-4">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Your Rights</h2>
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4">
               You have the right to:
             </p>
-            <ul className="text-zinc-400 space-y-2 list-disc pl-5">
+            <ul className="text-zinc-600 dark:text-zinc-400 space-y-2 list-disc pl-5">
               <li>Access the personal data we hold about you</li>
               <li>Request correction of inaccurate data</li>
               <li>Request deletion of your data</li>
@@ -116,8 +116,8 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Cookies</h2>
-            <p className="text-zinc-400 leading-relaxed">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Cookies</h2>
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               Our website may use cookies to improve your browsing experience.
               Cookies are small files stored on your device. You can control
               cookie settings through your browser preferences.
@@ -125,15 +125,15 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
-            <p className="text-zinc-400 leading-relaxed">
+            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-4">Contact Us</h2>
+            <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
               If you have any questions about this Privacy Policy or how we
               handle your data, please contact us at{" "}
               <a
-                href="mailto:edwinabuga@gmail.com"
+                href="mailto:edwin@yourvisaplanner.com"
                 className="text-bronze-400 hover:underline"
               >
-                edwinabuga@gmail.com
+                edwin@yourvisaplanner.com
               </a>
               .
             </p>

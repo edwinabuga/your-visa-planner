@@ -37,17 +37,17 @@ export default async function BlogPostPage({ params }: Props) {
     .split("\n")
     .map((line) => {
       if (line.startsWith("## "))
-        return `<h2 class="text-2xl font-bold text-white mt-10 mb-4">${line.slice(3)}</h2>`;
+        return `<h2 class="text-2xl font-bold mt-10 mb-4 text-zinc-900 dark:text-white">${line.slice(3)}</h2>`;
       if (line.startsWith("### "))
-        return `<h3 class="text-xl font-semibold text-white mt-8 mb-3">${line.slice(4)}</h3>`;
+        return `<h3 class="text-xl font-semibold mt-8 mb-3 text-zinc-900 dark:text-white">${line.slice(4)}</h3>`;
       if (line.startsWith("- **"))
-        return `<li class="ml-4 text-zinc-400">${line.slice(2).replace(/\*\*(.*?)\*\*/g, "<strong class='text-zinc-200'>$1</strong>")}</li>`;
+        return `<li class="ml-4 text-zinc-600 dark:text-zinc-400">${line.slice(2).replace(/\*\*(.*?)\*\*/g, "<strong class='text-zinc-900 dark:text-white'>$1</strong>")}</li>`;
       if (line.startsWith("- "))
-        return `<li class="ml-4 text-zinc-400">${line.slice(2)}</li>`;
+        return `<li class="ml-4 text-zinc-600 dark:text-zinc-400">${line.slice(2)}</li>`;
       if (line.startsWith("---"))
-        return `<hr class="my-8 border-zinc-800" />`;
+        return `<hr class="my-8 border-zinc-200 dark:border-zinc-800" />`;
       if (line.trim() === "") return "";
-      return `<p class="text-zinc-400 leading-relaxed mb-4">${line.replace(/\*\*(.*?)\*\*/g, "<strong class='text-zinc-200'>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-bronze-400 hover:underline">$1</a>')}</p>`;
+      return `<p class="leading-relaxed mb-4 text-zinc-600 dark:text-zinc-400">${line.replace(/\*\*(.*?)\*\*/g, "<strong class='text-zinc-900 dark:text-white'>$1</strong>").replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-bronze-400 hover:underline">$1</a>')}</p>`;
     })
     .join("\n");
 
@@ -62,10 +62,10 @@ export default async function BlogPostPage({ params }: Props) {
             <ArrowLeft size={16} />
             Back to Blog
           </Link>
-          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-white leading-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-medium text-zinc-900 dark:text-white leading-tight">
             {post.title}
           </h1>
-          <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-zinc-400">
+          <div className="flex flex-wrap items-center gap-4 mt-6 text-sm text-zinc-600 dark:text-zinc-400">
             <span className="flex items-center gap-1">
               <User size={14} />
               {post.author}
@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-white"
+                  className="rounded-full bg-zinc-200 dark:bg-white/10 px-3 py-1 text-xs font-medium text-zinc-700 dark:text-white"
                 >
                   {tag}
                 </span>
@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
 
       <article className="py-16 px-4">
         <div
-          className="mx-auto max-w-3xl"
+          className="mx-auto max-w-3xl blog-content"
           dangerouslySetInnerHTML={{ __html: contentHtml }}
         />
       </article>

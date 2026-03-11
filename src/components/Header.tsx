@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X, Plane } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navigation = [
   { name: "Services", href: "/services" },
@@ -25,7 +26,7 @@ export default function Header() {
     <header
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-black/90 backdrop-blur-md py-4 border-b border-bronze-900/50"
+          ? "bg-white/90 dark:bg-black/90 backdrop-blur-md py-4 border-b border-bronze-200/50 dark:border-bronze-900/50"
           : "bg-transparent py-6"
       }`}
     >
@@ -36,7 +37,7 @@ export default function Header() {
             <div className="p-2 border border-bronze-500/30 rounded-sm group-hover:border-bronze-400/60 transition-colors">
               <Plane className="w-5 h-5 text-bronze-400" />
             </div>
-            <span className="font-heading text-xl font-bold tracking-tight text-bronze-100">
+            <span className="font-heading text-xl font-bold tracking-tight text-bronze-800 dark:text-bronze-100">
               Your Visa Planner
             </span>
           </Link>
@@ -47,14 +48,15 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm uppercase tracking-widest text-zinc-400 hover:text-bronze-300 transition-colors"
+                className="text-sm uppercase tracking-widest text-zinc-600 dark:text-zinc-400 hover:text-bronze-600 dark:hover:text-bronze-300 transition-colors"
               >
                 {item.name}
               </Link>
             ))}
+            <ThemeToggle />
             <Link
               href="/eligibility"
-              className="rounded-full border border-bronze-500 px-5 py-2.5 text-xs font-medium uppercase tracking-wide text-bronze-200 hover:bg-bronze-900/30 hover:text-white hover:border-bronze-300 transition-all"
+              className="rounded-full border border-bronze-500 px-5 py-2.5 text-xs font-medium uppercase tracking-wide text-bronze-700 dark:text-bronze-200 hover:bg-bronze-100 dark:hover:bg-bronze-900/30 hover:text-bronze-900 dark:hover:text-white hover:border-bronze-400 dark:hover:border-bronze-300 transition-all"
             >
               Free Assessment
             </Link>
@@ -63,7 +65,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden p-2 text-bronze-200"
+            className="md:hidden p-2 text-bronze-700 dark:text-bronze-200"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open menu"
           >
@@ -74,11 +76,12 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-zinc-950 flex flex-col">
-          <div className="flex justify-end p-6">
+        <div className="fixed inset-0 z-50 bg-white dark:bg-zinc-950 flex flex-col">
+          <div className="flex items-center justify-between p-6">
+            <ThemeToggle />
             <button
               type="button"
-              className="p-2 text-bronze-200"
+              className="p-2 text-bronze-700 dark:text-bronze-200"
               onClick={() => setMobileMenuOpen(false)}
               aria-label="Close menu"
             >
@@ -91,7 +94,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg font-heading text-zinc-300 hover:text-bronze-400 transition-colors"
+                className="text-lg font-heading text-zinc-700 dark:text-zinc-300 hover:text-bronze-600 dark:hover:text-bronze-400 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}

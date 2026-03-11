@@ -14,13 +14,13 @@ import type { EligibilityFormData, FormApiResponse } from "@/lib/types";
 const TOTAL_STEPS = 7;
 
 const inputClass =
-  "w-full rounded-lg border border-zinc-700 bg-zinc-900/50 px-4 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-bronze-500 focus:ring-1 focus:ring-bronze-500 outline-none";
-const labelClass = "block text-sm font-medium text-zinc-300 mb-1";
+  "w-full rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 px-4 py-2.5 text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:border-bronze-500 focus:ring-1 focus:ring-bronze-500 outline-none";
+const labelClass = "block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1";
 const radioGroupClass = "flex flex-col gap-2.5 mt-1.5";
 const radioLabelClass =
-  "flex items-center gap-2.5 text-sm text-zinc-300 cursor-pointer rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 hover:border-bronze-500/40 has-[:checked]:border-bronze-500 has-[:checked]:bg-bronze-950/30 transition-colors";
+  "flex items-center gap-2.5 text-sm text-zinc-700 dark:text-zinc-300 cursor-pointer rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 px-4 py-3 hover:border-bronze-500/40 has-[:checked]:border-bronze-500 has-[:checked]:bg-bronze-50 dark:has-[:checked]:bg-bronze-950/30 transition-colors";
 const checkboxLabelClass =
-  "flex items-center gap-2.5 text-sm text-zinc-300 cursor-pointer rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 hover:border-bronze-500/40 has-[:checked]:border-bronze-500 has-[:checked]:bg-bronze-950/30 transition-colors";
+  "flex items-center gap-2.5 text-sm text-zinc-700 dark:text-zinc-300 cursor-pointer rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 px-4 py-3 hover:border-bronze-500/40 has-[:checked]:border-bronze-500 has-[:checked]:bg-bronze-50 dark:has-[:checked]:bg-bronze-950/30 transition-colors";
 
 const emptyFormData: EligibilityFormData = {
   firstName: "",
@@ -139,14 +139,14 @@ export default function EligibilityForm() {
   if (status === "submitted") {
     const whatsappMessage = `Hello! I just completed the eligibility assessment on your website. My name is ${data.firstName} ${data.secondName}. Looking forward to hearing from you!`;
     return (
-      <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-8 sm:p-12 text-center">
+      <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 p-8 sm:p-12 text-center">
         <div className="mx-auto mb-4 inline-flex rounded-full bg-bronze-500/10 p-3">
           <CheckCircle size={32} className="text-bronze-400" />
         </div>
-        <h2 className="text-2xl font-bold text-white mb-2">
+        <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">
           Assessment Submitted!
         </h2>
-        <p className="text-zinc-400 mb-2">
+        <p className="text-zinc-600 dark:text-zinc-400 mb-2">
           Thank you, {data.firstName}. We have received your eligibility
           assessment.
         </p>
@@ -166,7 +166,7 @@ export default function EligibilityForm() {
           </a>
           <a
             href="/"
-            className="flex items-center justify-center gap-2 rounded-full border border-zinc-700 px-8 py-3 text-sm font-medium text-zinc-300 hover:bg-zinc-800 transition-colors"
+            className="flex items-center justify-center gap-2 rounded-full border border-zinc-300 dark:border-zinc-700 px-8 py-3 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           >
             Back to Homepage
             <ArrowRight size={16} />
@@ -187,7 +187,7 @@ export default function EligibilityForm() {
           </span>
           <span>{Math.round((step / TOTAL_STEPS) * 100)}%</span>
         </div>
-        <div className="h-2 rounded-full bg-zinc-800">
+        <div className="h-2 rounded-full bg-zinc-200 dark:bg-zinc-800">
           <div
             className="h-2 rounded-full bg-gradient-to-r from-bronze-600 to-bronze-400 transition-all duration-300"
             style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
@@ -197,8 +197,8 @@ export default function EligibilityForm() {
 
       {/* Error banner */}
       {status === "error" && (
-        <div className="rounded-lg bg-red-950/30 border border-red-800 p-4 mb-6">
-          <p className="text-sm text-red-400">{errorMessage}</p>
+        <div className="rounded-lg bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 p-4 mb-6">
+          <p className="text-sm text-red-600 dark:text-red-400">{errorMessage}</p>
         </div>
       )}
 
@@ -310,7 +310,7 @@ export default function EligibilityForm() {
                   />
                   <select
                     id="stayDurationUnit"
-                    className="rounded-lg border border-zinc-700 bg-zinc-900/50 px-4 py-2.5 text-sm text-white focus:border-bronze-500 focus:ring-1 focus:ring-bronze-500 outline-none w-32"
+                    className="rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900/50 px-4 py-2.5 text-sm text-zinc-900 dark:text-white focus:border-bronze-500 focus:ring-1 focus:ring-bronze-500 outline-none w-32"
                     value={data.stayDurationUnit}
                     onChange={(e) =>
                       update({ stayDurationUnit: e.target.value })
@@ -669,7 +669,7 @@ export default function EligibilityForm() {
                 />
               </div>
               <div className="pt-2">
-                <label className="flex items-start gap-3 text-sm text-zinc-400 cursor-pointer">
+                <label className="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-400 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={data.disclaimerAccepted}
@@ -697,7 +697,7 @@ export default function EligibilityForm() {
           <button
             type="button"
             onClick={back}
-            className="flex items-center gap-2 rounded-full border border-zinc-700 px-6 py-3 text-sm font-medium text-zinc-300 hover:bg-zinc-800 transition-colors"
+            className="flex items-center gap-2 rounded-full border border-zinc-300 dark:border-zinc-700 px-6 py-3 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
           >
             <ArrowLeft size={16} />
             Back
@@ -747,7 +747,7 @@ function StepWrapper({
 }) {
   return (
     <div>
-      <h2 className="text-lg font-semibold text-white mb-5">{title}</h2>
+      <h2 className="text-lg font-semibold text-zinc-900 dark:text-white mb-5">{title}</h2>
       {children}
     </div>
   );

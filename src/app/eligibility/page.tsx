@@ -15,10 +15,10 @@ export default function EligibilityPage() {
           <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-4">
             Free Assessment
           </p>
-          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-zinc-900 dark:text-white leading-[1.1]">
             Check Your Eligibility
           </h1>
-          <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
             Complete our free eligibility assessment to find out which visa
             route is best for your situation. It only takes a few minutes.
           </p>
@@ -53,12 +53,12 @@ export default function EligibilityPage() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="border border-zinc-800 p-5 text-center"
+                className="border border-zinc-200 dark:border-zinc-800 p-5 text-center"
               >
-                <h3 className="font-semibold text-white mb-2">
+                <h3 className="font-semibold text-zinc-900 dark:text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-zinc-500">{item.description}</p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">{item.description}</p>
               </div>
             ))}
           </div>

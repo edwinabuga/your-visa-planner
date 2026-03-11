@@ -49,10 +49,10 @@ export default function ServicesPage() {
           <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-4">
             Our Services
           </p>
-          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-zinc-900 dark:text-white leading-[1.1]">
             Visa Services
           </h1>
-          <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
             Expert consultancy for UK, Schengen, US, UAE, and other
             destinations. Select a service below to learn more.
           </p>

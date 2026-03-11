@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import { Eye, ShieldCheck, Lock } from "lucide-react";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -13,50 +14,50 @@ export default function AboutPage() {
     <>
       {/* Header */}
       <section className="py-20 sm:py-28 px-4 pt-32">
-        <div className="mx-auto max-w-3xl text-center">
+        <FadeIn className="mx-auto max-w-3xl text-center">
           <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-4">
             About Us
           </p>
-          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-white leading-[1.1]">
+          <h1 className="font-heading text-5xl sm:text-6xl font-medium text-zinc-900 dark:text-white leading-[1.1]">
             Your Case Deserves Personal Attention
           </h1>
-          <p className="mt-6 text-lg text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto leading-relaxed">
             Your Visa Planner was founded in November 2025 to make visa
             applications less stressful and more successful for Kenyans and
             East Africans.
           </p>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Founder section */}
       <section className="py-20 px-4">
         <div className="mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <FadeIn>
               {/* Placeholder for professional photo */}
-              <div className="aspect-[4/5] bg-gradient-to-br from-bronze-900/30 to-black flex items-center justify-center border border-zinc-800">
-                <div className="text-center text-white p-8">
-                  <div className="w-32 h-32 rounded-full bg-white/5 mx-auto mb-4 flex items-center justify-center border border-bronze-500/30">
-                    <span className="font-heading text-4xl text-bronze-200">
+              <div className="aspect-[4/5] bg-gradient-to-br from-bronze-200/30 dark:from-bronze-900/30 to-stone-100 dark:to-black flex items-center justify-center border border-zinc-200 dark:border-zinc-800">
+                <div className="text-center p-8">
+                  <div className="w-32 h-32 rounded-full bg-zinc-100 dark:bg-white/5 mx-auto mb-4 flex items-center justify-center border border-bronze-500/30">
+                    <span className="font-heading text-4xl text-bronze-700 dark:text-bronze-200">
                       EA
                     </span>
                   </div>
-                  <p className="text-sm text-zinc-500">
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
                     Professional photo coming soon
                   </p>
                 </div>
               </div>
-            </div>
-            <div>
+            </FadeIn>
+            <FadeIn delay={0.2}>
               <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-4">
                 Founder & Lead Consultant
               </p>
-              <h2 className="font-heading text-3xl sm:text-4xl text-white mb-8">
+              <h2 className="font-heading text-3xl sm:text-4xl text-zinc-900 dark:text-white mb-8">
                 Meet Edwin Abuga
               </h2>
-              <div className="space-y-5 text-zinc-400 leading-relaxed">
+              <div className="space-y-5 text-zinc-600 dark:text-zinc-400 leading-relaxed">
                 <p>
-                  <strong className="text-bronze-200">
+                  <strong className="text-bronze-700 dark:text-bronze-200">
                     Edwin Abuga Gekonge
                   </strong>{" "}
                   gained years of experience working directly inside VFS Global
@@ -76,23 +77,23 @@ export default function AboutPage() {
                   case can put forward a strong application.
                 </p>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-20 px-4 bg-zinc-900/30">
+      <section className="py-20 px-4 bg-stone-100/60 dark:bg-zinc-900/30">
         <div className="mx-auto max-w-6xl">
-          <div className="text-center mb-14">
+          <FadeIn className="text-center mb-14">
             <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-3">
               Why Clients Trust Us
             </p>
-            <h2 className="font-heading text-3xl sm:text-4xl text-white">
+            <h2 className="font-heading text-3xl sm:text-4xl text-zinc-900 dark:text-white">
               Our Values
             </h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6">
+          </FadeIn>
+          <StaggerContainer className="grid sm:grid-cols-3 gap-6">
             {[
               {
                 icon: Eye,
@@ -113,37 +114,37 @@ export default function AboutPage() {
                   "Full service via Google Meet & WhatsApp. No traffic, no office queues — just results.",
               },
             ].map((value) => (
-              <div
+              <StaggerItem
                 key={value.title}
-                className="bg-black/40 border border-zinc-800 p-8 hover:border-bronze-800/50 transition-colors"
+                className="bg-white dark:bg-black/40 border border-zinc-200 dark:border-zinc-800 p-8 hover:border-bronze-300/50 dark:hover:border-bronze-800/50 transition-colors"
               >
                 <value.icon
                   size={28}
                   className="text-bronze-500 mb-4"
                   strokeWidth={1.5}
                 />
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="text-lg font-semibold text-zinc-900 dark:text-white mb-2">
                   {value.title}
                 </h3>
-                <p className="text-sm text-zinc-500 leading-relaxed">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                   {value.description}
                 </p>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Approach */}
       <section className="py-20 px-4">
-        <div className="mx-auto max-w-3xl text-center">
+        <FadeIn className="mx-auto max-w-3xl text-center">
           <p className="text-sm tracking-widest uppercase text-bronze-400 font-medium mb-3">
             How We Work
           </p>
-          <h2 className="font-heading text-3xl sm:text-4xl text-white mb-8">
+          <h2 className="font-heading text-3xl sm:text-4xl text-zinc-900 dark:text-white mb-8">
             Our Approach
           </h2>
-          <div className="space-y-5 text-zinc-400 leading-relaxed text-lg">
+          <div className="space-y-5 text-zinc-600 dark:text-zinc-400 leading-relaxed text-lg">
             <p>
               At Your Visa Planner, we believe that a successful visa
               application starts with understanding your unique situation. We
@@ -161,7 +162,7 @@ export default function AboutPage() {
               simple: to give you the best possible chance of approval.
             </p>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       <CTASection />
