@@ -5,7 +5,7 @@ const services = [
   { name: "Other UK Visas", href: "/services/uk-other" },
   { name: "Schengen Visas", href: "/services/schengen" },
   { name: "USA, UAE & Global", href: "/services/custom" },
-  { name: "Refusal Rescue", href: "/services/uk-visitor#refusal" },
+  { name: "Reapplication", href: "/services/uk-visitor" },
 ];
 
 const company = [
@@ -67,8 +67,8 @@ export default function Footer() {
                 </a>
               </li>
               <li className="text-bronze-500">
-                <a href="mailto:edwinabuga@gmail.com" className="hover:text-bronze-400 transition-colors">
-                  edwinabuga@gmail.com
+                <a href="mailto:edwin@yourvisaplanner.com" className="hover:text-bronze-400 transition-colors">
+                  edwin@yourvisaplanner.com
                 </a>
               </li>
             </ul>

@@ -43,7 +43,7 @@ export async function POST(
     const fullName = `${data.firstName} ${data.secondName}`;
 
     await resend.emails.send({
-      from: "Your Visa Planner <edwinabuga@gmail.com>",
+      from: "Your Visa Planner <edwin@yourvisaplanner.com>",
       to: process.env.RECIPIENT_EMAIL!,
       subject: `New Eligibility Assessment — ${fullName}`,
       html: buildEmailHtml(data),
@@ -53,7 +53,7 @@ export async function POST(
     if (data.email && data.email.trim()) {
       try {
         await resend.emails.send({
-          from: "Your Visa Planner <edwinabuga@gmail.com>",
+          from: "Your Visa Planner <edwin@yourvisaplanner.com>",
           to: data.email.trim(),
           subject:
             "We've received your eligibility assessment — Your Visa Planner",

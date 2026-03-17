@@ -7,7 +7,7 @@ export default function JsonLd() {
       "Professional visa consultancy based in Nairobi, Kenya. Expert guidance for UK, Schengen, US, UAE, and other international visas.",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://yourvisaplanner.com",
     telephone: `+${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "254796544253"}`,
-    email: "edwinabuga@gmail.com",
+    email: "edwin@yourvisaplanner.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Nairobi",

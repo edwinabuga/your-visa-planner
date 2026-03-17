@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "Can you help if I've been refused before?",
-    a: "Absolutely — refusal rescue is one of our core specialties. We analyse your refusal letter, identify exactly what went wrong, and build a stronger reapplication strategy tailored to your case. We offer a Standard Reapplication package for straightforward refusals and a Complex Reapplication package for multiple refusals or complicated circumstances.",
+    a: "Absolutely — reapplication support is one of our core specialties. We analyse your refusal letter, identify exactly what went wrong, and build a stronger reapplication strategy tailored to your case. We offer a Standard Reapplication package for straightforward refusals and a Complex Reapplication package for multiple refusals or complicated circumstances.",
   },
   {
     q: "Do I need to visit your office?",

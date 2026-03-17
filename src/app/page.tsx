@@ -20,7 +20,7 @@ const services = [
     icon: <span className="text-2xl font-heading italic text-bronze-400">UK</span>,
     title: "UK Visitor Visas",
     description:
-      "Our core specialty. From form filling to refusal rescue, we provide end-to-end support for your journey to the United Kingdom.",
+      "Our core specialty. From form filling to reapplication, we provide end-to-end support for your journey to the United Kingdom.",
     highlight: "Insider Expertise",
     href: "/services/uk-visitor",
   },
