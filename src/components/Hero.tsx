@@ -29,19 +29,11 @@ export default function Hero() {
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-bronze-300/40 dark:via-bronze-900/40 to-transparent" />
 
         <div className="mx-auto max-w-5xl px-6 relative z-10 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 border border-bronze-500/30 rounded-full px-4 py-1.5 mb-8 bg-bronze-50/50 dark:bg-bronze-950/30 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs uppercase tracking-widest text-bronze-700 dark:text-bronze-200">
-              Insider Experience
-            </span>
-          </div>
-
           {/* Headline */}
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-8">
-            <span className="block text-zinc-900 dark:text-white">Visa Applications,</span>
+            <span className="block text-zinc-900 dark:text-white">Your Visa Application,</span>
             <span className="block text-zinc-400 dark:text-zinc-500 italic">
-              Mastered from the Inside.
+              Guided by Insider Experience.
             </span>
           </h1>
 
