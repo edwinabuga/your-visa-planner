@@ -1,19 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { escapeHtml } from "@/lib/utils";
 import type { EligibilityFormData, FormApiResponse } from "@/lib/types";
 
-function getResend() {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) throw new Error("RESEND_API_KEY is not configured");
-  return new Resend(key);
+function createTransporter() {
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  if (!user || !pass) {
+    throw new Error("GMAIL_USER and GMAIL_APP_PASSWORD must be configured");
+  }
+  return nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
 }
 
 export async function POST(
   request: NextRequest
 ): Promise<NextResponse<FormApiResponse>> {
   try {
-    const resend = getResend();
+    const transporter = createTransporter();
     const data: EligibilityFormData = await request.json();
 
     if (
@@ -40,10 +46,11 @@ export async function POST(
       );
     }
 
+    const gmailUser = process.env.GMAIL_USER!;
     const fullName = `${data.firstName} ${data.secondName}`;
 
-    await resend.emails.send({
-      from: "Your Visa Planner <edwin@yourvisaplanner.com>",
+    await transporter.sendMail({
+      from: `Your Visa Planner <${gmailUser}>`,
       to: process.env.RECIPIENT_EMAIL!,
       subject: `New Eligibility Assessment — ${fullName}`,
       html: buildEmailHtml(data),
@@ -52,8 +59,8 @@ export async function POST(
     // Confirmation email to submitter (best-effort — don't fail if this errors)
     if (data.email && data.email.trim()) {
       try {
-        await resend.emails.send({
-          from: "Your Visa Planner <edwin@yourvisaplanner.com>",
+        await transporter.sendMail({
+          from: `Your Visa Planner <${gmailUser}>`,
           to: data.email.trim(),
           subject:
             "We've received your eligibility assessment — Your Visa Planner",

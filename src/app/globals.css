@@ -73,7 +73,7 @@ html {
 
 /* Blog content theme-aware styles */
 .blog-content {
-  @apply text-zinc-600 dark:text-zinc-400;
+  @apply text-zinc-700 dark:text-zinc-300;
 }
 
 .blog-content h2 {
@@ -85,11 +85,11 @@ html {
 }
 
 .blog-content p {
-  @apply text-zinc-600 dark:text-zinc-400 leading-relaxed mb-4;
+  @apply text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4;
 }
 
 .blog-content li {
-  @apply text-zinc-600 dark:text-zinc-400 ml-4;
+  @apply text-zinc-700 dark:text-zinc-300 ml-4;
 }
 
 .blog-content strong {

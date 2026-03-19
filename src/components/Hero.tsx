@@ -32,7 +32,7 @@ export default function Hero() {
           {/* Headline */}
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-medium leading-tight mb-8">
             <span className="block text-zinc-900 dark:text-white">Your Visa Application,</span>
-            <span className="block text-zinc-400 dark:text-zinc-500 italic">
+            <span className="block text-zinc-500 dark:text-zinc-400 italic">
               Guided by Insider Experience.
             </span>
           </h1>
@@ -64,7 +64,7 @@ export default function Hero() {
 
           {/* VFS / TLS Logo Strip */}
           <div className="mt-12 pt-8 border-t border-zinc-200 dark:border-white/5">
-            <p className="text-zinc-400 dark:text-zinc-600 text-xs uppercase tracking-widest mb-6 font-medium">
+            <p className="text-zinc-500 dark:text-zinc-400 text-xs uppercase tracking-widest mb-6 font-medium">
               Previous Professional Experience At
             </p>
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
@@ -103,7 +103,7 @@ export default function Hero() {
                 <Icon className="w-4 h-4 text-bronze-400 shrink-0" />
                 <div>
                   <p className="text-xs font-semibold text-zinc-900 dark:text-white tracking-wide">{label}</p>
-                  <p className="text-xs text-zinc-400 dark:text-zinc-500">{sub}</p>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">{sub}</p>
                 </div>
               </div>
             ))}

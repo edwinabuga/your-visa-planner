@@ -84,7 +84,7 @@ export default function FAQ() {
             <h3 className="font-heading text-4xl text-zinc-900 dark:text-white leading-tight">
               Everything you need to know
             </h3>
-            <p className="mt-6 text-zinc-500 text-sm leading-relaxed">
+            <p className="mt-6 text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
               Still have a question? We&apos;re happy to help via WhatsApp or email — links are below.
             </p>
           </FadeIn>

@@ -75,7 +75,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-zinc-200 dark:border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-400 dark:text-zinc-600">
+        <div className="border-t border-zinc-200 dark:border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 dark:text-zinc-500">
           <p>&copy; {new Date().getFullYear()} Your Visa Planner. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 mt-4 md:mt-0">
             {company.map((item) => (

@@ -108,7 +108,7 @@ export default function Home() {
               <h3 className="font-heading text-4xl md:text-5xl text-zinc-900 dark:text-white mb-8 leading-tight">
                 Not just another agent.{" "}
                 <br />
-                <span className="italic text-zinc-400 dark:text-zinc-500">An insider.</span>
+                <span className="italic text-zinc-500 dark:text-zinc-400">An insider.</span>
               </h3>
 
               <div className="space-y-6 text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -162,7 +162,7 @@ export default function Home() {
                   <h4 className="text-zinc-900 dark:text-white font-heading text-xl mb-2">
                     {item.title}
                   </h4>
-                  <p className="text-zinc-500 text-sm leading-relaxed">
+                  <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
                     {item.desc}
                   </p>
                 </StaggerItem>
@@ -202,7 +202,7 @@ export default function Home() {
                 <h4 className="text-xl text-zinc-900 dark:text-white font-heading mb-3">
                   {service.title}
                 </h4>
-                <p className="text-zinc-500 text-sm leading-relaxed mb-6">
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6">
                   {service.description}
                 </p>
 
@@ -228,7 +228,7 @@ export default function Home() {
                 The Path to Approval
               </h3>
             </div>
-            <p className="text-zinc-500 max-w-md mt-6 md:mt-0 md:text-right">
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-md mt-6 md:mt-0 md:text-right">
               A structured, professional approach that leaves nothing to chance.
             </p>
           </FadeIn>
@@ -245,7 +245,7 @@ export default function Home() {
                 <h4 className="text-lg text-zinc-900 dark:text-white mb-3 font-medium">
                   {step.title}
                 </h4>
-                <p className="text-zinc-500 text-sm leading-relaxed">
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
                   {step.desc}
                 </p>
               </StaggerItem>
@@ -264,10 +264,10 @@ export default function Home() {
             <h3 className="font-heading text-4xl text-zinc-900 dark:text-white mb-6">
               UK Visitor Visa Packages
             </h3>
-            <p className="text-zinc-500 max-w-xl mx-auto">
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto">
               Transparent pricing in Kenyan Shillings. No hidden agent fees.
               <br />
-              <span className="text-xs opacity-60">
+              <span className="text-xs opacity-70">
                 *Two-gate payment: KES 5,000 consultation fee (non-refundable, credited toward total if you proceed) + balance paid after consultation before work begins. All fees are non-refundable.
               </span>
             </p>
@@ -280,7 +280,7 @@ export default function Home() {
                 <h4 className="text-zinc-900 dark:text-white font-heading text-2xl mb-2">
                   Form Filling
                 </h4>
-                <p className="text-zinc-500 text-sm">
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm">
                   For those who have their documents ready.
                 </p>
               </div>
@@ -298,11 +298,11 @@ export default function Home() {
                   <Check className="w-5 h-5 text-bronze-600 shrink-0" />
                   Appointment Booking
                 </li>
-                <li className="flex gap-3 text-zinc-600 dark:text-zinc-400 text-sm opacity-50">
+                <li className="flex gap-3 text-zinc-600 dark:text-zinc-400 text-sm opacity-60">
                   <Check className="w-5 h-5 text-zinc-400 dark:text-zinc-700 shrink-0" />
                   Document Checklist
                 </li>
-                <li className="flex gap-3 text-zinc-600 dark:text-zinc-400 text-sm opacity-50">
+                <li className="flex gap-3 text-zinc-600 dark:text-zinc-400 text-sm opacity-60">
                   <Check className="w-5 h-5 text-zinc-400 dark:text-zinc-700 shrink-0" />
                   Cover Letter & Itinerary
                 </li>
@@ -373,7 +373,7 @@ export default function Home() {
                 <h4 className="text-zinc-900 dark:text-white font-heading text-2xl mb-2">
                   Standard Reapplication
                 </h4>
-                <p className="text-zinc-500 text-sm">
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm">
                   For straightforward previous refusals.
                 </p>
               </div>
@@ -414,7 +414,7 @@ export default function Home() {
                 <h4 className="text-zinc-900 dark:text-white font-heading text-2xl mb-2">
                   Complex Reapplication
                 </h4>
-                <p className="text-zinc-500 text-sm">
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm">
                   For complex cases with multiple refusals.
                 </p>
               </div>
@@ -456,7 +456,7 @@ export default function Home() {
               <h5 className="text-zinc-900 dark:text-white font-heading mb-2">
                 Discounts Available
               </h5>
-              <p className="text-sm text-zinc-500">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
                 Save <strong>KES 3,000</strong> for every additional adult on
                 the same application. Children under 18 pay{" "}
                 <strong>half price</strong>.
@@ -466,7 +466,7 @@ export default function Home() {
               <h5 className="text-zinc-900 dark:text-white font-heading mb-2">
                 Optional Add-ons
               </h5>
-              <p className="text-sm text-zinc-500">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
                 Afterhours session (+KES 3,000) or In-person session within
                 Nairobi (+KES 3,000).
               </p>
@@ -508,7 +508,7 @@ export default function Home() {
                   <span className="block text-zinc-900 dark:text-white font-heading">
                     {t.name}
                   </span>
-                  <span className="text-xs text-zinc-400 dark:text-zinc-600 uppercase tracking-wider">
+                  <span className="text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wider">
                     {t.visa}
                   </span>
                 </div>

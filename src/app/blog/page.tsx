@@ -51,7 +51,7 @@ export default function BlogPage() {
                     </h3>
                   </div>
                   <div className="p-6">
-                    <div className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 mb-3">
+                    <div className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 mb-3">
                       <Calendar size={14} />
                       <time>
                         {new Date(post.date).toLocaleDateString("en-GB", {

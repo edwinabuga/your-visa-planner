@@ -75,7 +75,7 @@ export default function ContactPage() {
                     />
                     <div>
                       <p className="font-medium text-zinc-900 dark:text-white">Location</p>
-                      <p className="text-sm text-zinc-500">Nairobi, Kenya</p>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400">Nairobi, Kenya</p>
                     </div>
                   </StaggerItem>
                   <StaggerItem className="flex items-start gap-3">
@@ -86,7 +86,7 @@ export default function ContactPage() {
                     />
                     <div>
                       <p className="font-medium text-zinc-900 dark:text-white">Phone</p>
-                      <p className="text-sm text-zinc-500">
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
                         <a
                           href="tel:+254796544253"
                           className="hover:text-bronze-400 transition-colors"
@@ -104,7 +104,7 @@ export default function ContactPage() {
                     />
                     <div>
                       <p className="font-medium text-zinc-900 dark:text-white">Email</p>
-                      <p className="text-sm text-zinc-500">
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
                         <a
                           href="mailto:edwin@yourvisaplanner.com"
                           className="hover:text-bronze-400 transition-colors"
@@ -122,7 +122,7 @@ export default function ContactPage() {
                     />
                     <div>
                       <p className="font-medium text-zinc-900 dark:text-white">Office Hours</p>
-                      <p className="text-sm text-zinc-500">
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
                         Mon — Fri: 9:00 AM — 6:00 PM EAT
                       </p>
                     </div>

@@ -59,7 +59,7 @@ export default function CompareServicesTable() {
           <h2 className="font-heading text-4xl sm:text-5xl text-zinc-900 dark:text-white mb-4">
             Compare Services
           </h2>
-          <p className="text-zinc-500 dark:text-zinc-400 max-w-xl">
+          <p className="text-zinc-600 dark:text-zinc-400 max-w-xl">
             All packages start with a free eligibility assessment. UK Visitor
             Visa pricing shown — other visa types quoted on request.
           </p>
@@ -71,7 +71,7 @@ export default function CompareServicesTable() {
 
             {/* Header row */}
             <div className="bg-zinc-50 dark:bg-zinc-900/50 px-6 py-5 flex items-end">
-              <span className="text-xs uppercase tracking-widest text-zinc-400 font-medium">
+              <span className="text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">
                 Feature
               </span>
             </div>
@@ -99,7 +99,7 @@ export default function CompareServicesTable() {
                   >
                     {tier.name}
                   </p>
-                  <p className="text-xs text-zinc-400 dark:text-zinc-500 mb-3">
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 mb-3">
                     {tier.tagline}
                   </p>
                   <p
@@ -184,7 +184,7 @@ export default function CompareServicesTable() {
           </div>
 
           {/* Footnote */}
-          <p className="mt-5 text-xs text-zinc-400 dark:text-zinc-600">
+          <p className="mt-5 text-xs text-zinc-500 dark:text-zinc-500">
             * All packages require a KES 5,000 non-refundable consultation
             deposit, credited toward the total if you proceed. Group discounts
             available.
@@ -220,7 +220,7 @@ export default function CompareServicesTable() {
                     <p className="font-heading text-xl text-zinc-900 dark:text-white leading-tight">
                       {tier.name}
                     </p>
-                    <p className="text-sm text-zinc-400 dark:text-zinc-500 mt-0.5">
+                    <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">
                       {tier.tagline}
                     </p>
                   </div>
@@ -252,7 +252,7 @@ export default function CompareServicesTable() {
                           className="text-zinc-300 dark:text-zinc-700 shrink-0"
                           strokeWidth={1.5}
                         />
-                        <span className="text-sm text-zinc-400 dark:text-zinc-600">
+                        <span className="text-sm text-zinc-500 dark:text-zinc-500">
                           {feature.label}
                         </span>
                       </>
